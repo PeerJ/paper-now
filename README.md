@@ -8,7 +8,7 @@ Create, edit and display a journal article, entirely in GitHub.
 
 1. [Fork this repository to your own account](https://github.com/peerj/paper-now/fork)
 1. [Edit the article metadata](index.md)
-1. Add [data](data), [figures](_figures) and [tables](_tables)
+1. Add [data](data)*, [figures](_figures) and [tables](_tables)
 1. [Edit each section](_sections)
 1. [View your article](https://peerj.github.io/paper-now/) in GitHub Pages at https://{username}.github.io/paper-now
 
@@ -18,6 +18,7 @@ Create, edit and display a journal article, entirely in GitHub.
 * Paper Now is inspired by [Jekyll Now](https://github.com/barryclark/jekyll-now).
 * If you rename your forked repository, you also need to change the `baseurl` setting in [_config.yml](_config.yml) to match.
 * It's not possible to fork the same repository twice in GitHub, so to create a second article you'll need to create a new repository in GitHub, clone this repository locally and push it to your new repository.
+* *There isn't currently a way to upload binary files using GitHub's web interface, so you'll need to do this locally. [GitHub's desktop client](https://guides.github.com/introduction/getting-your-project-on-github/#desktop) is probably the easiest way to clone a repository, add files and push the changes back to GitHub.
 
 ## Feedback
 
