@@ -4,11 +4,11 @@ Create and host a journal article, entirely in GitHub Pages.
 
 ## Instructions
 
-1. [Fork this repository to your own account](https://github.com/hubgit/paper-now/fork)
+1. [Fork this repository to your own account](https://github.com/peerj/paper-now/fork)
 1. [Edit the article metadata](index.md)
 1. Add [data](data), [figures](_figures) and [tables](_tables)
 1. [Edit each section](_sections)
-1. [View your article](http://git.macropus.org/paper-now/) at https://{username}.github.io/paper-now
+1. [View your article](https://peerj.github.io/paper-now/) at https://{username}.github.io/paper-now
 
 ## Notes
 
@@ -18,5 +18,5 @@ Create and host a journal article, entirely in GitHub Pages.
 
 ## Feedback
 
-* Does this article structure make sense? Would it be better all in one file? [Create an issue](https://github.com/hubgit/paper-now/issues) to discuss it.
-* Made changes to the layout templates or some other part of the code? [Send a pull request](https://github.com/hubgit/paper-now/pulls).
+* Does this article structure make sense? Would it be better all in one file? [Create an issue](https://github.com/peerj/paper-now/issues) to discuss it.
+* Made changes to the layout templates or some other part of the code? [Send a pull request](https://github.com/peerj/paper-now/pulls).
