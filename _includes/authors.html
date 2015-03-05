@@ -1,0 +1,28 @@
+<ul class="list-unstyled">
+    {% for author in page.authors %}
+    <li class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div itemprop="name">
+            <span class="glyphicon glyphicon-user"></span>
+            <span>{{ author.name }}</span>
+        </div>
+
+        {% if author.email %}
+        <div>
+            <a itemprop="email" href="mailto:{{ author.email }}">
+                <span class="glyphicon glyphicon-envelope"></span>
+                <span>{{ author.email }}</span>
+            </a>
+        </div>
+        {% endif %}
+
+        <ul class="affiliations list-unstyled">
+            {% for affiliation in author.affiliations %}
+            <li itemprop="address">
+                <span class="glyphicon glyphicon-globe"></span>
+                <span>{{ affiliation }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>

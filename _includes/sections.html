@@ -1,0 +1,23 @@
+<section id="introduction">
+    <h2>Introduction</h2>
+    {% capture introduction %}{% include_relative _sections/02-introduction.md %}{% endcapture %}
+    {{ introduction | markdownify }}
+</section>
+
+<section id="methods">
+    <h2>Methods</h2>
+    {% capture methods %}{% include_relative _sections/03-methods.md %}{% endcapture %}
+    {{ methods | markdownify }}
+</section>
+
+<section id="results">
+    <h2>Results</h2>
+    {% capture results %}{% include_relative _sections/04-results.md %}{% endcapture %}
+    {{ results | markdownify }}
+</section>
+
+<section id="discussion">
+    <h2>Discussion</h2>
+    {% capture discussion %}{% include_relative _sections/05-discussion.md %}{% endcapture %}
+    {{ discussion | markdownify }}
+</section>

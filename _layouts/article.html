@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- metadata -->
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic">
+    <link rel="stylesheet" href="{{ site.baseurl }}/article.css">
+
+    <!-- MathJax config -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            messageStyle: "none",
+            "HTML-CSS": {
+                linebreaks: { automatic: true },
+                scale: 80
+            },
+            menuSettings: {
+                zoom: "Click"
+            }
+        });
+    </script>
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,Safe"></script>
+    <script src="article.js"></script>
+</head>
+<body>
+    <!-- article -->
+    <article itemscope itemtype="http://schema.org/ScholarlyArticle">
+        <!-- main column -->
+        <div class="column" id="main">
+            <!-- header -->
+            <header>
+                <h1 id="title">
+                    {% capture url %}{% if page.doi %}http://dx.doi.org/{{ page.doi }}{% else %}{{ site.baseurl }}{% endif %}{% endcapture %}
+                    <a itemprop="url" href="{{ url }}">{{ page.title }}</a>
+                </h1>
+
+                <div id="authors-list">
+                    {% for author in page.authors %}
+                        <span>{{ author.name }}</span>
+                    {% endfor %}
+                </div>
+            </header>
+
+            <!-- abstract -->
+            <div id="abstract" itemprop="description">
+                {% capture abstract %}{% include_relative _sections/01-abstract.md %}{% endcapture %}
+                {{ abstract | markdownify }}
+            </div>
+
+            {% include sections.html %}
+        </div>
+
+        <!-- side column -->
+        <div class="column" id="sidebar">
+            <!-- publication date -->
+            {% if page.date %}
+                <div id="published">
+                    <h2>Published</h2>
+                    <div>
+                        <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- doi -->
+            {% if page.doi %}
+                <div id="doi">
+                    <h2>DOI</h2>
+
+                    <div>{{ page.doi }}</div>
+                </div>
+            {% endif %}
+
+            <div id="authors">
+                <h2>Authors</h2>
+
+                {% include authors.html %}
+            </div>
+
+            <!-- figures -->
+            {% for item in site.figures %}
+                <div id="figures">
+                    <h2>Figures</h2>
+                    {{ item.output }}
+                </div>
+            {% endfor %}
+
+            <!-- tables -->
+            {% for item in site.tables %}
+                <div id="tables">
+                    <h2>Tables</h2>
+                    <div>
+                        {{ item.output }}
+                    </div>
+                </div>
+            {% endfor %}
+
+            <!-- footer -->
+            <section id="references">
+                <h2>References</h2>
+                {% capture references %}{% include_relative _sections/06-references.md %}{% endcapture %}
+                {{ references | markdownify }}
+            </section>
+        </div>
+    </article>
+</body>
+</html>
