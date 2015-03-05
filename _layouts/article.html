@@ -41,7 +41,7 @@
         <div class="column" id="main">
             <!-- header -->
             <header>
-                <h1 id="title">
+                <h1 id="title" itemprop="name">
                     {% capture url %}{% if page.doi %}http://dx.doi.org/{{ page.doi }}{% else %}{{ site.baseurl }}{% endif %}{% endcapture %}
                     <a itemprop="url" href="{{ url }}">{{ page.title }}</a>
                 </h1>
@@ -79,7 +79,7 @@
                 <div id="doi">
                     <h2>DOI</h2>
 
-                    <div>{{ page.doi }}</div>
+                    <div itemprop="sameAs">{{ page.doi }}</div>
                 </div>
             {% endif %}
 
