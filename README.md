@@ -2,6 +2,8 @@
 
 Create, edit and display a journal article, entirely in GitHub.
 
+[See an example article](https://peerj.github.io/paper-now/)
+
 ## Instructions
 
 1. [Fork this repository to your own account](https://github.com/peerj/paper-now/fork)
