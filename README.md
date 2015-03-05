@@ -12,6 +12,7 @@ Create and host a journal article, entirely in GitHub Pages.
 
 ## Notes
 
+* Paper Now is at a very experimental stage; it may progress further if people find it useful.
 * Paper Now is inspired by [Jekyll Now](https://github.com/barryclark/jekyll-now).
 * If you rename your forked repository, you also need to change the `baseurl` setting in [_config.yml](_config.yml) to match.
 * It's not possible to fork the same repository twice in GitHub, so to create a second article you'll need to create a new repository in GitHub, clone this repository locally and push it to your new repository.
