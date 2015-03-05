@@ -1,6 +1,6 @@
 # Paper Now
 
-Create and host a journal article, entirely in GitHub Pages.
+Create, edit and display a journal article, entirely in GitHub.
 
 ## Instructions
 
@@ -8,7 +8,7 @@ Create and host a journal article, entirely in GitHub Pages.
 1. [Edit the article metadata](index.md)
 1. Add [data](data), [figures](_figures) and [tables](_tables)
 1. [Edit each section](_sections)
-1. [View your article](https://peerj.github.io/paper-now/) at https://{username}.github.io/paper-now
+1. [View your article](https://peerj.github.io/paper-now/) in GitHub Pages at https://{username}.github.io/paper-now
 
 ## Notes
 
