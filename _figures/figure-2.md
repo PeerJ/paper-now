@@ -4,7 +4,7 @@ label: Figure 2
 title: A visualisation
 description: A visualisation of the data
 embed:
-    url: http://bl.ocks.org/mbostock/raw/11463507/
+    url: data/phyllotaxis/
     width: 1400
     height: 1000
 ---
