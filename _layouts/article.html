@@ -41,11 +41,13 @@
         <div class="column" id="main">
             <!-- header -->
             <header>
+                <!-- title -->
                 <h1 id="title" itemprop="name">
                     {% capture url %}{% if page.doi %}http://dx.doi.org/{{ page.doi }}{% else %}{{ site.baseurl }}{% endif %}{% endcapture %}
                     <a itemprop="url" href="{{ url }}">{{ page.title }}</a>
                 </h1>
 
+                <!-- author names -->
                 <div id="authors-list">
                     {% for author in page.authors %}
                         <span>{{ author.name }}</span>
@@ -59,13 +61,14 @@
                 {{ abstract | markdownify }}
             </div>
 
+            <!-- main content -->
             {% include sections.html %}
         </div>
 
         <!-- side column -->
         <div class="column" id="sidebar">
-            <!-- publication date -->
             {% if page.date %}
+                <!-- publication date -->
                 <div id="published">
                     <h2>Published</h2>
                     <div>
@@ -74,40 +77,41 @@
                 </div>
             {% endif %}
 
-            <!-- doi -->
             {% if page.doi %}
+                <!-- doi -->
                 <div id="doi">
                     <h2>DOI</h2>
-
                     <div itemprop="sameAs">{{ page.doi }}</div>
                 </div>
             {% endif %}
 
+            <!-- authors -->
             <div id="authors">
                 <h2>Authors</h2>
-
                 {% include authors.html %}
             </div>
 
             <!-- figures -->
-            {% for item in site.figures %}
-                <div id="figures">
-                    <h2>Figures</h2>
-                    {{ item.output }}
-                </div>
-            {% endfor %}
-
-            <!-- tables -->
-            {% for item in site.tables %}
-                <div id="tables">
-                    <h2>Tables</h2>
-                    <div>
+            <div id="figures">
+                <h2>Figures</h2>
+                {% for item in site.figures %}
+                    <div id="figure-{{ forloop.index }}">
                         {{ item.output }}
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
 
-            <!-- footer -->
+            <!-- tables -->
+            <div id="tables">
+                <h2>Tables</h2>
+                {% for item in site.tables %}
+                    <div id="table-{{ forloop.index }}">
+                        {{ item.output }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- references -->
             <section id="references">
                 <h2>References</h2>
                 {% capture references %}{% include_relative _sections/06-references.md %}{% endcapture %}
