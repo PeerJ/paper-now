@@ -3,5 +3,12 @@
         <p><b>{{ page.label }}:</b> {{ page.title }}</p>
         <p>{{ page.description | markdownify }}</p>
     </figcaption>
-    <img src="{{ page.image }}">
+
+    {% if page.embed %}
+        <div>
+            <iframe src="{{ page.embed.url }}" width="{{ page.embed.width }}" height="{{ page.embed.height }}"></iframe>
+        </div>
+    {% else %}
+        <img src="{{ page.image }}">
+    {% endif %}
 </figure>

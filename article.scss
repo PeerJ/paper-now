@@ -6,6 +6,14 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+iframe {
+    border: 0;
+}
+
+#sidebar {
+    overflow-x: hidden;
+}
+
 @media screen {
     html, body, article, .column {
         height: 100%;
@@ -108,6 +116,10 @@ article p {
 
 .author {
     margin: 2rem 0;
+}
+
+#figures > div:not(:last-of-type) {
+    margin-bottom: 4rem;
 }
 
 figure img {

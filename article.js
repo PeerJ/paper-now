@@ -1,3 +1,5 @@
+// references
+
 $(function() {
     var referenceLinks = {};
 
@@ -36,5 +38,20 @@ $(function() {
         });
 
         this.elementHeight;
+    });
+});
+
+// sidebar embeds
+
+$(function() {
+    $('#sidebar iframe').each(function() {
+        var node = $(this);
+        var parent = node.parent();
+        var ratio = parent.width() / node.width();
+        node.css({
+            transform: 'scale(' + ratio + ')',
+            transformOrigin: 'top left'
+        });
+        parent.height(parent.height() * ratio);
     });
 });
