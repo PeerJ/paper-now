@@ -1,6 +1,8 @@
 # Paper Now
 
-Create, edit and display a journal article, entirely in GitHub.
+Create, edit and (optionally) display a journal article, entirely in GitHub.
+
+In contrast to the more traditional process of `submit > peer-review > publish` at [PeerJ](https://peerj.com), or even the less formal preprints at _PeerJ Preprints_ or _arXiv_, _Paper Now_ is an experiment to see where the future may go with scholarly communication. Initially, it may be that co-authors collaborate either privately or publicly on GitHub and then proceed to submitting to PeerJ or other journals for formal peer-review or preprinting. Or perhaps this is where the traditional medium of publication begins to diverge. There is no end goal other than to see what the academic community wants, which is why this is completely open to fork, extend, and build upon.
 
 [See an example article](https://peerj.github.io/paper-now/)
 
