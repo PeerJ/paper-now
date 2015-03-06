@@ -28,10 +28,10 @@
     </script>
 
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,Safe"></script>
+    {% for requirement in site.require %}
+        <script src="{{ requirement[1] }}"></script>
+    {% endfor %}
+
     <script src="article.js"></script>
 </head>
 <body>

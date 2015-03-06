@@ -1,6 +1,12 @@
 safe: true
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'serve.sh', 'article.png', 'LICENSE']
 baseurl: /paper-now
+require:
+    jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
+    modernizr: https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js
+    bootstrap: https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js
+    mathjax: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,Safe
+    hypothesis: https://hypothes.is/embed.js
 collections:
     figures:
         output: true
