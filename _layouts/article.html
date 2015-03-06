@@ -114,8 +114,10 @@
             <!-- references -->
             <section id="references">
                 <h2>References</h2>
-                {% capture references %}{% include_relative _sections/06-references.md %}{% endcapture %}
-                {{ references | markdownify }}
+                <ul>
+                    {% capture references %}{% include_relative _sections/06-references.md %}{% endcapture %}
+                    {{ references | markdownify }}
+                </ul>
             </section>
         </div>
     </article>

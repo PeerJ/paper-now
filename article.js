@@ -1,7 +1,9 @@
 $(function() {
     var referenceLinks = {};
 
-    var references = $('#references li');
+    var referencesList = $('#references > ul');
+
+    var references = referencesList.find('li');
 
     references.each(function(i) {
         $(this).find('a[href]').each(function() {
@@ -9,19 +11,27 @@ $(function() {
         });
     });
 
-    $('#main a').each(function() {
+    // start from the bottom, so the reference list gets re-ordered correctly
+    var links = $('#main a').get().reverse();
+
+    $(links).each(function() {
         if (typeof referenceLinks[this.href] == 'undefined') {
             return;
         }
 
         var referenceIndex = referenceLinks[this.href];
 
+        var reference = references.eq(referenceIndex);
+
+        // move the reference to the top of the list
+        referencesList.prepend(reference);
+
         $(this)/*.wrap('<sup/>')*/.popover({
             trigger: 'hover',
             html: true,
             container: 'body',
             content: function() {
-                return references.eq(referenceIndex).html();
+                return reference.html();
             }
         });
 
