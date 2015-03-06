@@ -28,8 +28,8 @@
     </script>
 
     <!-- scripts -->
-    {% for requirement in site.require %}
-        <script src="{{ requirement[1] }}"></script>
+    {% for javascript in site.javascripts %}
+        <script src="{{ javascript[1] }}"></script>
     {% endfor %}
 
     <script src="article.js"></script>
