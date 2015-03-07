@@ -15,14 +15,37 @@
         </div>
         {% endif %}
 
-        <ul class="affiliations list-unstyled">
-            {% for affiliation in author.affiliations %}
-            <li itemprop="address">
-                <span class="glyphicon glyphicon-globe"></span>
-                <span>{{ affiliation }}</span>
-            </li>
-            {% endfor %}
-        </ul>
+        {% if author.affiliations %}
+            <ul class="affiliations list-unstyled">
+                {% for affiliation in author.affiliations %}
+                <li itemprop="address">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    <span>{{ affiliation }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if author.funders %}
+            <ul class="funders list-unstyled">
+                {% for funder in author.funders %}
+                    <li>
+                        <span class="glyphicon glyphicon-piggy-bank"></span>
+                        {% if funder.uri %}
+                            <a href="{{ funder.uri }}">{{ funder.name }}</a>
+                        {% else %}
+                            <span>{{ funder.name }}</span>
+                        {% endif %}
+
+                        {% if funder.awards %}
+                            <span class="awards inline-list">
+                                ({% for award in funder.awards %}<span>{{ award }}</span>{% endfor %})
+                            </span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     </li>
     {% endfor %}
 </ul>
