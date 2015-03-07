@@ -24,7 +24,11 @@
                 {% for affiliation in author.affiliations %}
                 <li itemprop="address">
                     <span class="glyphicon glyphicon-globe"></span>
-                    <span>{{ affiliation }}</span>
+                    {% if affiliation.url %}
+                        <a href="{{ affiliation.url }}">{{ affiliation.address }}</a>
+                    {% else %}
+                        <span>{{ affiliation.address }}</span>
+                    {% endif %}
                 </li>
                 {% endfor %}
             </ul>
