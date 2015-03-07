@@ -52,6 +52,7 @@ $(function() {
             transform: 'scale(' + ratio + ')',
             transformOrigin: 'top left'
         });
-        parent.height(parent.height() * ratio);
+        parent.height(parent.height() * ratio).css('position', 'relative');
+        node.css('position', 'absolute');
     });
 });
