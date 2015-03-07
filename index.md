@@ -25,4 +25,5 @@ abstract: |
     This is the first paragraph of the abstract.
 
     This is another paragraph of the abstract.
+acknowledgements: "Our gratitude belongs to these people."
 ---

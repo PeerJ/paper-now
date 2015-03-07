@@ -124,6 +124,14 @@
                 {% endfor %}
             </div>
 
+            <!-- acknowledgements -->
+            {% if page.acknowledgements %}
+                <div id="acknowledgements">
+                    <h2>Acknowledgements</h2>
+                    {{ page.acknowledgements | markdownify }}
+                </div>
+            {% endif %}
+
             <!-- references -->
             <section id="references">
                 <h2>References</h2>
