@@ -131,6 +131,20 @@
                 {% capture references %}{% include_relative references.md %}{% endcapture %}
                 {{ references | markdownify }}
             </section>
+
+            <!-- funding -->
+            <section id="funding">
+                <h2>Funding</h2>
+                {% capture funding %}{% include_relative funding.md %}{% endcapture %}
+                {{ funding | markdownify }}
+            </section>
+
+            <!-- Acknowledgements -->
+            <section id="acknowledgements">
+                <h2>Acknowledgements</h2>
+                {% capture acknowledgements %}{% include_relative acknowledgements.md %}{% endcapture %}
+                {{ acknowledgements | markdownify }}
+            </section>
         </div>
     </article>
 </body>
