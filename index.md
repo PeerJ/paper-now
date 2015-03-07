@@ -6,6 +6,7 @@ date: # e.g. 2015-03-02
 authors:
   - name: First Author
     email: first.author@example.com
+    url: http://example.com/authors/1
     affiliations:
       - Department, Institution, City, Postal Code, Country
     funders:

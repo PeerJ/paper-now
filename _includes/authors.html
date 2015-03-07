@@ -3,7 +3,11 @@
     <li class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <div itemprop="name">
             <span class="glyphicon glyphicon-user"></span>
-            <span>{{ author.name }}</span>
+            {% if author.url %}
+                <a href="{{ author.url }}">{{ author.name }}</a>
+            {% else %}
+                <span>{{ author.name }}</span>
+            {% endif %}
         </div>
 
         {% if author.email %}
