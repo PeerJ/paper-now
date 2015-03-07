@@ -7,7 +7,7 @@ javascripts:
     bootstrap: https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js
     mathjax: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,Safe
     hypothesis: https://hypothes.is/embed.js
-    d3: https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js
+    #d3: https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js
 collections:
     figures:
         output: true
