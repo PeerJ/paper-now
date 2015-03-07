@@ -11,7 +11,7 @@ In contrast to the more traditional process of `submit > peer-review > publish` 
 1. [Fork this repository to your own account](https://github.com/peerj/paper-now/fork)
 1. [Edit the article metadata](index.md)
 1. Add [data](data)*, [figures](_figures) and [tables](_tables)
-1. [Edit each section](_sections)
+1. [Edit each section](_sections), as well as the [funding](funding.md) and [acknowledgements](acknowledgements.md) files
 1. [View your article](https://peerj.github.io/paper-now/) in GitHub Pages at https://{username}.github.io/paper-now
 
 ## Notes
