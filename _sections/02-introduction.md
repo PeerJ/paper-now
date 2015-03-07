@@ -1,3 +1,6 @@
+---
+title: Introduction
+---
 The background to the work.
 
 This sentence cites another article ([Author, 2014](https://example.com/articles/1)).

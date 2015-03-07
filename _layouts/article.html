@@ -48,7 +48,7 @@
                 </h1>
 
                 <!-- author names -->
-                <div id="authors-list">
+                <div id="authors-list" class="inline-list">
                     {% for author in page.authors %}
                         <span>{{ author.name }}</span>
                     {% endfor %}
@@ -57,12 +57,26 @@
 
             <!-- abstract -->
             <div id="abstract" itemprop="description">
-                {% capture abstract %}{% include_relative _sections/01-abstract.md %}{% endcapture %}
-                {{ abstract | markdownify }}
+                {{ page.abstract | markdownify }}
             </div>
 
-            <!-- main content -->
-            {% include sections.html %}
+            <!-- keywords -->
+            {% if page.keywords %}
+                <div id="keywords" itemprop="keywords" clas="inline-list">
+                    {% for keyword in keywords %}
+                        <span>{{ keyword }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- sections -->
+            {% for section in site.sections %}
+                <section id="{{ section.title | slugify }}"
+                    {% if section.property %}itemprop="{{ section.property}}"{% endif %}>
+                    <h2>{{ section.title }}</h2>
+                    {{ section.content }}
+                </section>
+            {% endfor %}
         </div>
 
         <!-- side column -->
@@ -114,10 +128,8 @@
             <!-- references -->
             <section id="references">
                 <h2>References</h2>
-                <ul>
-                    {% capture references %}{% include_relative _sections/06-references.md %}{% endcapture %}
-                    {{ references | markdownify }}
-                </ul>
+                {% capture references %}{% include_relative references.md %}{% endcapture %}
+                {{ references | markdownify }}
             </section>
         </div>
     </article>

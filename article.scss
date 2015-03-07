@@ -14,6 +14,10 @@ iframe {
     overflow-x: hidden;
 }
 
+#abstract h2 {
+    display: none;
+}
+
 @media screen {
     html, body, article, .column {
         height: 100%;
@@ -109,8 +113,7 @@ article p {
     font-size: 120%;
 }
 
-// authors in authors list
-#authors-list span:not(:last-child):after {
+.inline-list span:not(:last-child):after {
     content: ", ";
 }
 

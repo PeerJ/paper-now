@@ -1,6 +1,6 @@
 ---
 layout: article
-title: My First Article
+title: "My First Article"
 doi: # e.g. 10.1234/example.1
 date: # e.g. 2015-03-02
 authors:
@@ -13,4 +13,8 @@ authors:
     affiliations:
       - Department, Institution, City, Postal Code, Country
       - Department, Institution, City, Postal Code, Country
+abstract: |
+    This is the first paragraph of the abstract.
+
+    This is another paragraph of the abstract.
 ---

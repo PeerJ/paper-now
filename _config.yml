@@ -15,3 +15,5 @@ collections:
     tables:
         output: true
         title: 'Tables'
+    sections:
+        output: true
