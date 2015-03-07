@@ -43,7 +43,7 @@
             <header>
                 <!-- title -->
                 <h1 id="title" itemprop="name">
-                    <a itemprop="url" href="{{ site.baseurl }}">{{ page.title | markdownify }}</a>
+                    <a itemprop="url" href="./">{{ page.title }}</a>
                 </h1>
 
                 <!-- author names -->
@@ -63,7 +63,7 @@
             {% if page.keywords %}
                 <div id="keywords" itemprop="keywords" clas="inline-list">
                     {% for keyword in keywords %}
-                        <span>{{ keyword | markdownify }}</span>
+                        <span>{{ keyword }}</span>
                     {% endfor %}
                 </div>
             {% endif %}
@@ -72,7 +72,7 @@
             {% for section in site.sections %}
                 <section id="{{ section.title | slugify }}"
                     {% if section.property %}itemprop="{{ section.property}}"{% endif %}>
-                    <h2>{{ section.title | markdownify }}</h2>
+                    <h2>{{ section.title }}</h2>
                     {{ section.content }}
                 </section>
             {% endfor %}
