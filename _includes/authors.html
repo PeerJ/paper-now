@@ -39,8 +39,8 @@
                 {% for funder in author.funders %}
                     <li>
                         <span class="glyphicon glyphicon-piggy-bank"></span>
-                        {% if funder.uri %}
-                            <a href="{{ funder.uri }}">{{ funder.name }}</a>
+                        {% if funder.url %}
+                            <a href="{{ funder.url }}">{{ funder.name }}</a>
                         {% else %}
                             <span>{{ funder.name }}</span>
                         {% endif %}
