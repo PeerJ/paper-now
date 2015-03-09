@@ -96,6 +96,19 @@
                     <h2>DOI</h2>
                     <div><a href="https://dx.doi.org/{{ page.doi }}" itemprop="sameAs">{{ page.doi }}</a></div>
                 </div>
+
+                <!-- metrics -->
+                <div id="metrics">
+                    <h2>Metrics</h2>
+
+                    <div class="altmetric-embed"
+                        data-badge-type="medium-donut"
+                        data-badge-details="below"
+                        data-hide-no-mentions="false"
+                        data-doi="{{ page.doi}}"></div>
+
+                    <script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js" async></script>
+                </div>
             {% endif %}
 
             <!-- authors -->
