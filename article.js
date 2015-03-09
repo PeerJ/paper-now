@@ -1,3 +1,14 @@
+// inline markdown
+
+$(function() {
+    var md = window.markdownit();
+
+    $('[markdown]').each(function() {
+        this.innerHTML = md.renderInline(this.textContent);
+        this.removeAttribute('markdown');
+    })
+});
+
 // references
 
 $(function() {

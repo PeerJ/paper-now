@@ -1,7 +1,7 @@
 <table class="table table-bordered">
     <caption>
-        <p><b>{{ page.label }}:</b> {{ page.title }}</p>
-        <p>{{ page.description | markdownify }}</p>
+        <p><b>{{ page.label }}:</b> <span markdown>{{ page.title }}</span></p>
+        {{ page.description | markdownify }}
     </caption>
     {{ content }}
 </table>

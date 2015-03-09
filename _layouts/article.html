@@ -43,7 +43,7 @@
             <header>
                 <!-- title -->
                 <h1 id="title" itemprop="name">
-                    <a itemprop="url" href="./">{{ page.title }}</a>
+                    <a itemprop="url" href="./" markdown>{{ page.title }}</a>
                 </h1>
 
                 <!-- author names -->
@@ -72,7 +72,7 @@
             {% for section in site.sections %}
                 <section id="{{ section.title | slugify }}"
                     {% if section.property %}itemprop="{{ section.property}}"{% endif %}>
-                    <h2>{{ section.title }}</h2>
+                    <h2 markdown>{{ section.title }}</h2>
                     {{ section.content }}
                 </section>
             {% endfor %}
