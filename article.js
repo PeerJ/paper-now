@@ -1,12 +1,7 @@
-// inline markdown
+// table style
 
 $(function() {
-    var md = window.markdownit();
-
-    $('[markdown]').each(function() {
-        this.innerHTML = md.renderInline(this.textContent);
-        this.removeAttribute('markdown');
-    })
+    $('figure table').addClass('table table-bordered');
 });
 
 // references
