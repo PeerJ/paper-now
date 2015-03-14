@@ -1,6 +1,8 @@
 <figure>
     <figcaption>
-        <p><b>{{ page.label }}:</b> <span markdown>{{ page.title }}</span></p>
+        {% capture heading %}**{{ page.label }}**: {{ page.title }}{% endcapture %}
+        {{ heading | markdownify }}
+
         {{ page.description | markdownify }}
     </figcaption>
     {{ content }}

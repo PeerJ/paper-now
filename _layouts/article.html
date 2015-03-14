@@ -37,14 +37,15 @@
 <body>
     <!-- article -->
     <article itemscope itemtype="http://schema.org/ScholarlyArticle">
+        <meta itemprop="name" content="{{ page.title }}">
+
         <!-- main column -->
         <div class="column" id="main">
             <!-- header -->
             <header>
                 <!-- title -->
-                <h1 id="title" itemprop="name">
-                    <a itemprop="url" href="./" markdown>{{ page.title }}</a>
-                </h1>
+                {% capture title %}# {{ page.title }}{% endcapture %}
+                {{ title | markdownify }}
 
                 <!-- author names -->
                 <div id="authors-list" class="inline-list">
@@ -72,7 +73,9 @@
             {% for section in site.sections %}
                 <section id="{{ section.title | slugify }}"
                     {% if section.property %}itemprop="{{ section.property}}"{% endif %}>
-                    <h2 markdown>{{ section.title }}</h2>
+                    {% capture title %}## {{ section.title }}{% endcapture %}
+                    {{ title | markdownify }}
+
                     {{ section.content }}
                 </section>
             {% endfor %}
