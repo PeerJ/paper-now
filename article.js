@@ -1,3 +1,9 @@
+// table style
+
+$(function() {
+    $('figure table').addClass('table table-bordered');
+});
+
 // references
 
 $(function() {

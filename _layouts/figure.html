@@ -1,17 +1,9 @@
 <figure>
     <figcaption>
-        <p><b>{{ page.label }}:</b> {{ page.title }}</p>
-        <p>{{ page.description | markdownify }}</p>
-    </figcaption>
+        {% capture heading %}**{{ page.label }}**: {{ page.title }}{% endcapture %}
+        {{ heading | markdownify }}
 
-    {% if page.embed %}
-        <div>
-            <iframe src="{{ page.embed.url }}"
-                width="{{ page.embed.width }}"
-                height="{{ page.embed.height }}"
-                allowfullscreen></iframe>
-        </div>
-    {% else %}
-        <img src="{{ page.image }}">
-    {% endif %}
+        {{ page.description | markdownify }}
+    </figcaption>
+    {{ content }}
 </figure>

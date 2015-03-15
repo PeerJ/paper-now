@@ -1,11 +1,11 @@
 ---
-layout: table
+layout: figure
 label: Table 1
 title: A table of the results
 description: A table about _some_ data
 source: ../data/cell-culture/culture.csv
 ---
-
+<table>
 <thead>
     <tr>
     <th>Heading 1</th>
@@ -18,3 +18,4 @@ source: ../data/cell-culture/culture.csv
     <td>Data point</td>
     </tr>
 </tbody>
+</table>

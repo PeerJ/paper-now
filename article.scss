@@ -59,7 +59,8 @@ iframe {
         padding: 0;
     }
 
-    #sidebar > div > * {
+    #sidebar > div > *,
+    #sidebar > aside > * {
         margin: 0 2rem;
     }
 
@@ -77,6 +78,19 @@ iframe {
 
     #abstract {
         padding: 1em 0;
+    }
+
+    #metrics h2 {
+        display: none;
+    }
+
+    .altmetric-embed > div:first-child {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .altmetric-embed p {
+        display: none;
     }
 }
 
