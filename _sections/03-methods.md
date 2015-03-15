@@ -1,4 +1,27 @@
 ---
 title: Methods
 ---
-How the experiment was performed.
+
+### Cultivation conditions
+
+*Achnanthidium minutissimum* (Kützing) ([Czarnecki, 1994](http://www.algaebase.org/search/species/detail/?species_id=Ge79396858528c750)) was isolated from photoautotrophic epilithic biofilms of Lake Constance as previously described ([Windler, Gruber & Kroth, 2012](http://zs.thulb.uni-jena.de/receive/jportal_jparticle_00273835)). Stock cultures were grown in cell culture flasks with ventilation caps (Sarstedt, Newton USA) filled with modified liquid Bacillariophycean Medium (BM; ([Schlösser, 1994](http://onlinelibrary.wiley.com/doi/10.1111/j.1438-8677.1994.tb00784.x/abstract); [Windler, Gruber & Kroth, 2012](http://zs.thulb.uni-jena.de/receive/jportal_jparticle_00273835)) in two different culture states: either with co-isolated bacteria (“xenic”), or “axenic” after their removal ([Windler, Gruber & Kroth, 2012](http://zs.thulb.uni-jena.de/receive/jportal_jparticle_00273835)). Monthly, these stock cultures were scraped off the flask bases and sub-cultured in new BM.
+
+Biofilms were grown directly on SEM sample carriers by the following procedure: Sample carrier disks of ca. 1 cm in diameter were punched from Thermanox tissue culture cover slips (Miles Laboratories Inc., USA). Thermanox material has two different sides, therefore care was taken to always store and handle the disks right-side-up. They were sterilised by immersion in 70% isopropanol (v/v in H2O) over night and subsequently irradiated with UV light for 2 h in a laminar flow cabinet. One sterile disk was placed into each well of 6-well plates (Sarstedt, USA, order number 83.1839.500) and covered with 3 to 5 mL BM. Culture wells were inoculated with 5×105 to 1×106 *A. minutissimum* cells from the stock cultures after those were checked to be axenic or xenic. Axenicity was confirmed by SYBR Green staining and observation under a BX51 (Olympus, USA) bright-field fluorescence microscope using GFP fluorescence filters. Well plates were sealed with Parafilm and incubated at 16°C under an illumination regime of 12 h dark and 12 h light at 20-50 µmol photons×m-2×s-1 for 11 to 31 days.
+
+### Crystal violet staining and bright-field microscopy
+
+Thermanox disks were removed from stationary cultures after 11 to 31 days with inverted (“soldering” or “cover glass”) forceps (Hammacher, Germany) and rinsed with 1 mL sterile-filtered tap water. A Gram-staining protocol [Kaplan & Fine, 2002](http://aem.asm.org/content/68/10/4943) was applied to visualise adherent cells and their extracellular polymeric structures as follows: A droplet of 200 µL solution of 0.02% crystal violet (CV) in sterile filtered tap water was applied onto the disk for 1‑2 min, which was held suspended by forceps. Disks were rinsed with 1 to 3 mL water, until the runoff no longer contained visible CV. In order to find the same cell clusters in both microscopic approaches, pointing or encircling scratches were made into disk surfaces.
+
+Disks were placed on moistened glass slides and moistened additionally with 20 µL sterile-filtered tap water. Cover slips were applied carefully and marked regions were observed under a BX51 (Olympus, USA) bright-field fluorescence microscope using chlorophyll fluorescence filters. Images of these areas at various magnifications were taken with AxioCams MRm (fluorescence and grey-scale images) and MRc (colour) using AxioVision software (Zeiss, Germany).
+
+### Scanning electron microscopy (SEM) and energy-dispersive X-ray (EDX) spectroscopy
+
+Diatom cells were fixed on Thermanox disks by incubation in a mixture of 2% glutaraldehyde, 10 mM CaCl2 and 10 mM MgCl2 in 0.1 M sodium cacodylate buffer at pH 7 and room temperature (RT) for 2 h. Dehydration was conducted first with 30% and 50% EtOH, at RT for 2 h each, followed by 70% EtOH at 4°C over night, 90% EtOH at RT for 2 h and finally with 96% and 100% EtOH twice for 1 h each. Critical point drying in CO2 followed (Balzers CPD030, Liechtenstein) and samples were finally sputtered with gold (Au) and palladium (Pd) to a thickness of 5 nm (Balzers SCD030, Liechtenstein).
+
+After fixation, dehydration and Au/Pd-sputtering, the biofilm-covered Thermanox disks were imaged with a Zeiss “AURIGA” scanning electron microscope, controlled with the “SmartSEM” software v05.04.05.00. The elemental composition of samples was analysed by energy-dispersive X-ray (EDX) spectroscopy. Samples were excited with the AURIGA's electron beam at 10 kV and the emitted X-rays (of specific energy levels due to the elemental electron configuration) were recorded with an Oxford Instruments “X-Max 20 mm2” detector and the “INCA” software v4.15.
+
+### Bacteria counting and data visualisation
+
+Bacteria (rod-shaped particles) on fully visible *A. minutissimum* valve faces were counted in scanning electron micrographs. Valve faces were classified into frustules and capsules, depending on whether pores were visible or completely disappeared under a layer of capsule material. Diatom cells with partial encapsulation were not included in the counting, and neither were bacteria cells which attached to the girdle bands of diatom cells.
+ImageJ v1.46r with the Cell Counter plug-in v2010/12/07 was used to count diatoms and bacteria cells. This data was evaluated and visualised with R v3.1.1 (language and environment for statistical computing; ([R Development Core Team, 2011](http://www.R-project.org/)), ggplot2 v1.0.0 ([Wickham, 2009](http://ggplot2.org/book/)) and [RStudio v0.98 Desktop Open Source Edition](http://www.rstudio.com/products/rstudio/).
+
