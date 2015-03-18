@@ -24,9 +24,4 @@ authors:
         url: http://www.nih.gov/
         doi: "10.13039/100000002"
         awards: [ "NIH123" ]
-abstract: |
-    This is the first paragraph of the abstract.
-
-    This is another paragraph of the abstract.
-acknowledgements: "Our gratitude belongs to these people."
 ---

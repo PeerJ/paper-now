@@ -55,20 +55,6 @@
                 </div>
             </header>
 
-            <!-- abstract -->
-            <div id="abstract" itemprop="description">
-                {{ page.abstract | markdownify }}
-            </div>
-
-            <!-- keywords -->
-            {% if page.keywords %}
-                <div id="keywords" itemprop="keywords" clas="inline-list">
-                    {% for keyword in keywords %}
-                        <span>{{ keyword }}</span>
-                    {% endfor %}
-                </div>
-            {% endif %}
-
             <!-- sections -->
             {% for section in site.sections %}
                 <section id="{{ section.title | slugify }}"
@@ -122,6 +108,7 @@
                 {% include authors.html %}
             </div>
 
+
             <!-- figures -->
             <div id="figures">
                 <h2>Figures</h2>
@@ -142,14 +129,19 @@
                 {% endfor %}
             </div>
 
-            <!-- acknowledgements -->
-            {% if page.acknowledgements %}
-                <div id="acknowledgements">
-                    <h2>Acknowledgements</h2>
-                    {{ page.acknowledgements | markdownify }}
+            <!-- keywords -->
+            {% if page.keywords %}
+                <div id="keywords" itemprop="keywords">
+                    <h2>Keywords</h2>
+
+                    <div class="inline-list">
+                        {% for keyword in page.keywords %}
+                            <span>{{ keyword }}</span>
+                        {% endfor %}
+                    </div>
                 </div>
             {% endif %}
-
+            
             <!-- references -->
             <section id="references">
                 <h2>References</h2>
