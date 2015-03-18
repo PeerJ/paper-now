@@ -1,5 +1,6 @@
 ---
 title: "Methods"
+order: 3
 ---
 
 How the experiment was performed.
