@@ -1,5 +1,6 @@
 ---
 layout: figure
+order: 2
 label: Figure 2
 title: "A visualisation"
 description: "A visualisation of the data"
