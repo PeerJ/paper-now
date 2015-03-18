@@ -8,7 +8,7 @@ authors:
     email: "first.author@example.com"
     url: http://example.com/authors/1
     affiliations:
-      - address: "Department, Institution, City, Postal Code, Country"
+      - address: "Department, Institution, City, State, Country"
     funders:
         - name: "Medical Research Council"
           doi: "10.13039/501100000265"
@@ -16,9 +16,9 @@ authors:
   - name: "Second Author"
     email: "second.author@example.com"
     affiliations:
-      - address: "Department, Institution, City, Postal Code, Country"
+      - address: "Department, Institution, City, State, Country"
         url: http://mathematics.stanford.edu/
-      - address: "Department, Institution, City, Postal Code, Country"
+      - address: "Department, Institution, City, State, Country"
     funders:
       - name: "National Institutes of Health"
         url: http://www.nih.gov/
