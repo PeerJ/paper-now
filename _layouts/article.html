@@ -60,7 +60,7 @@
             <!-- sections -->
             {% assign sections = site.sections | sort:"order" %}
             {% for section in sections %}
-                <section id="{{ section.title | slugify }}"
+                <section id="section-{{ section.title | slugify }}"
                     {% if section.property %}itemprop="{{ section.property}}"{% endif %}>
                     {% capture title %}## {{ section.title }}{% endcapture %}
                     {{ title | markdownify }}
