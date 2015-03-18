@@ -124,11 +124,11 @@ article p {
     color: #333;
 }
 
-#abstract p {
+[data-section=abstract] p {
     font-size: 120%;
 }
 
-#abstract p:last-of-type {
+[data-section=abstract] p:last-of-type {
     margin-bottom: 0;
 }
 
