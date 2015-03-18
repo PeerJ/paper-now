@@ -18,8 +18,7 @@ In contrast to the more traditional process of `submit > peer review > publish` 
 
 * Paper Now is at a very experimental stage; it may progress further if people find it useful.
 * Paper Now is inspired by [Jekyll Now](https://github.com/barryclark/jekyll-now).
-* If you rename your forked repository, you also need to change the `baseurl` setting in [_config.yml](_config.yml) to match.
-* It's not possible to fork the same repository twice in GitHub, so to create a second article you'll need to create a new repository in GitHub, clone this repository locally and push it to your new repository.
+* If you rename your repository, you also need to change the `baseurl` setting in [_config.yml](_config.yml) to match.
 * *There isn't currently a way to upload binary files using GitHub's web interface, so you'll need to do this locally. [GitHub's desktop client](https://guides.github.com/introduction/getting-your-project-on-github/#desktop) is probably the easiest way to clone a repository, add files and push the changes back to GitHub.
 
 ## Feedback
