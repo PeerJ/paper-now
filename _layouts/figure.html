@@ -1,4 +1,4 @@
-<figure>
+<figure id="{{ page.label | slugify }}">
     <figcaption>
         {% capture heading %}**{{ page.label }}**: {{ page.title }}{% endcapture %}
         {{ heading | markdownify }}

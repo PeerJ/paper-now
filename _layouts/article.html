@@ -113,19 +113,7 @@
             <div id="figures">
                 <h2>Figures</h2>
                 {% for item in site.figures %}
-                    <div id="figure-{{ forloop.index }}">
-                        {{ item.output }}
-                    </div>
-                {% endfor %}
-            </div>
-
-            <!-- tables -->
-            <div id="tables">
-                <h2>Tables</h2>
-                {% for item in site.tables %}
-                    <div id="table-{{ forloop.index }}">
-                        {{ item.output }}
-                    </div>
+                    {{ item.output }}
                 {% endfor %}
             </div>
 
@@ -141,7 +129,7 @@
                     </div>
                 </div>
             {% endif %}
-            
+
             <!-- references -->
             <section id="references">
                 <h2>References</h2>
