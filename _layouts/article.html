@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+    {% assign article = site.data.article %}
+
     <!-- metadata -->
-    <title>{{ page.title }}</title>
-    <meta name="description" content="{{ page.description }}">
+    <title>{{ article.title }}</title>
+    <meta name="description" content="{{ article.description }}">
 
     <!-- styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
@@ -37,19 +39,19 @@
 <body>
     <!-- article -->
     <article itemscope itemtype="http://schema.org/ScholarlyArticle">
-        <meta itemprop="name" content="{{ page.title }}">
+        <meta itemprop="name" content="{{ article.title }}">
 
         <!-- main column -->
         <div class="column" id="main">
             <!-- header -->
             <header>
                 <!-- title -->
-                {% capture title %}# {{ page.title }}{% endcapture %}
+                {% capture title %}# {{ article.title }}{% endcapture %}
                 {{ title | markdownify }}
 
                 <!-- author names -->
                 <div id="authors-list" class="inline-list">
-                    {% for author in page.authors %}
+                    {% for author in article.authors %}
                         <span>{{ author.name }}</span>
                     {% endfor %}
                 </div>
@@ -70,7 +72,7 @@
 
         <!-- side column -->
         <div class="column" id="sidebar">
-            {% if page.doi %}
+            {% if article.doi %}
                 <!-- metrics -->
                 <aside id="metrics" class="hidden-print">
                     <!--<h2>Metrics</h2>-->
@@ -79,34 +81,34 @@
                         data-badge-type="medium-donut"
                         data-badge-details="below"
                         data-hide-no-mentions="true"
-                        data-doi="{{ page.doi}}"></div>
+                        data-doi="{{ article.doi}}"></div>
 
                     <script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js" async></script>
                 </aside>
             {% endif %}
 
-            {% if page.date %}
+            {% if article.date %}
                 <!-- publication date -->
                 <div id="published">
                     <h2>Published</h2>
                     <div>
-                        <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+                        <time itemprop="datePublished" datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
                     </div>
                 </div>
             {% endif %}
 
-            {% if page.doi %}
+            {% if article.doi %}
                 <!-- doi -->
                 <div id="doi">
                     <h2>DOI</h2>
-                    <div><a href="https://dx.doi.org/{{ page.doi }}" itemprop="sameAs">{{ page.doi }}</a></div>
+                    <div><a href="https://dx.doi.org/{{ article.doi }}" itemprop="sameAs">{{ article.doi }}</a></div>
                 </div>
             {% endif %}
 
             <!-- authors -->
             <div id="authors">
                 <h2>Authors</h2>
-                {% include authors.html %}
+                {% include authors.html authors=article.authors %}
             </div>
 
 
@@ -122,12 +124,12 @@
             {% endif %}
 
             <!-- keywords -->
-            {% if page.keywords %}
+            {% if article.keywords %}
                 <div id="keywords" itemprop="keywords">
                     <h2>Keywords</h2>
 
                     <div class="inline-list">
-                        {% for keyword in page.keywords %}
+                        {% for keyword in article.keywords %}
                             <span>{{ keyword }}</span>
                         {% endfor %}
                     </div>
