@@ -56,7 +56,8 @@
             </header>
 
             <!-- sections -->
-            {% for section in site.sections %}
+            {% assign sections = site.sections | sort:"order" %}
+            {% for section in sections %}
                 <section id="{{ section.title | slugify }}"
                     {% if section.property %}itemprop="{{ section.property}}"{% endif %}>
                     {% capture title %}## {{ section.title }}{% endcapture %}
@@ -110,12 +111,15 @@
 
 
             <!-- figures -->
-            <div id="figures">
-                <h2>Figures</h2>
-                {% for item in site.figures %}
-                    {{ item.output }}
-                {% endfor %}
-            </div>
+            {% if site.figures %}
+                <div id="figures">
+                    <h2>Figures</h2>
+                    {% assign figures = site.figures | sort:"order" %}
+                    {% for item in figures %}
+                        {{ item.output }}
+                    {% endfor %}
+                </div>
+            {% endif %}
 
             <!-- keywords -->
             {% if page.keywords %}
