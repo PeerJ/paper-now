@@ -117,8 +117,23 @@
                 <div id="figures">
                     <h2>Figures</h2>
                     {% assign figures = site.figures | sort:"order" %}
-                    {% for item in figures %}
-                        {{ item.output }}
+                    {% for figure in figures %}
+                        <figure id="{{ figure.label | slugify }}">
+                            <figcaption>
+                                {% capture heading %}<a href="{{ figure.url }}" class="figure-link">**{{ figure.label }}**</a>: {{ figure.title }}{% endcapture %}
+                                {{ heading | markdownify }}
+
+                                {{ figure.description | markdownify }}
+                            </figcaption>
+
+                            <div class="figure-wrap">
+                                {% if figure.image %}
+                                    <a href="{{ figure.url }}" class="figure-link"><img src="{{ figure.image }}"></a>
+                                {% else %}
+                                    {{ figure.content | markdownify }}
+                                {% endif %}
+                            </div>
+                        </figure>
                     {% endfor %}
                 </div>
             {% endif %}
@@ -151,6 +166,6 @@
                 {{ references | markdownify }}
             </section>
         </div>
-    </article>
+    </article>    
 </body>
 </html>

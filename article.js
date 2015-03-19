@@ -1,9 +1,3 @@
-// table style
-
-$(function() {
-    $('figure table').addClass('table table-bordered');
-});
-
 // references
 
 $(function() {
@@ -44,6 +38,26 @@ $(function() {
         });
 
         this.elementHeight;
+    });
+});
+
+// figure links
+
+$(function() {
+    var modal = $('<div id="figure-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"></div></div></div>');
+
+    var content = modal.find('.modal-content').text('Loading…');
+
+    modal.appendTo(document.body).modal({ show: false });
+
+    modal.on('hidden.bs.modal', function() {
+        content.html('Loading…');
+    });
+
+    $('a.figure-link').on('click', function() {
+        modal.modal('show');
+        content.load(this.href + ' figure');
+        return false;
     });
 });
 

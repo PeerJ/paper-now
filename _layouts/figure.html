@@ -1,12 +1,12 @@
-<figure id="{{ page.label | slugify }}">
-    <figcaption>
-        {% capture heading %}**{{ page.label }}**: {{ page.title }}{% endcapture %}
-        {{ heading | markdownify }}
-
-        {{ page.description | markdownify }}
-    </figcaption>
-
-    <div class="figure-wrap">
-        {{ content }}
-    </div>
-</figure>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/figure.css">
+</head>
+<body>
+    <figure>{{ content }}</figure>
+</body>
+</html>

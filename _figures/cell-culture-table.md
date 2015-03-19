@@ -6,7 +6,7 @@ title: "A table of the results"
 description: "A table about _some_ data"
 source: ../data/cell-culture/culture.csv
 ---
-<table>
+<table class="table table-bordered">
 <thead>
     <tr>
     <th>Heading 1</th>
