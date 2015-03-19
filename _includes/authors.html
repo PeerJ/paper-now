@@ -1,6 +1,7 @@
 <ul class="list-unstyled">
     {% for author in include.authors %}
-    <li class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <li class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"
+        itemid="{{ author.id }}">
         <div itemprop="name">
             <span class="glyphicon glyphicon-user"></span>
             {% if author.url %}
