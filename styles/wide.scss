@@ -1,0 +1,72 @@
+---
+---
+
+html, body, article, .column {
+    height: 100%;
+    overflow: hidden;
+}
+
+article {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+.column {
+    height: 100%;
+    overflow: auto;
+}
+
+#main {
+    -webkit-flex: 2;
+    -moz-flex: 2;
+    -ms-flex: 2;
+    -o-flex: 2;
+    flex: 2;
+    padding: 0 2rem 5rem;
+}
+
+#sidebar {
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    -o-flex: 1;
+    flex: 1;
+    padding: 0;
+}
+
+#sidebar > div > *,
+#sidebar > aside > * {
+    margin: 0 2rem;
+}
+
+#sidebar h2 {
+    font-size: 150%;
+    font-weight: 200;
+    margin: 2rem 0;
+    padding: 1rem 1rem;
+    background: #eee;
+}
+
+#sidebar div:first-of-type h2 {
+    margin-top: 0;
+}
+
+#abstract {
+    padding: 1em 0;
+}
+
+#metrics h2 {
+    display: none;
+}
+
+.altmetric-embed > div:first-child {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.altmetric-embed p {
+    display: none;
+}

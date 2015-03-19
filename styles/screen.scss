@@ -1,0 +1,75 @@
+---
+---
+
+@import "all.scss";
+
+body {
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.column {
+    padding: 0 2rem 5rem;
+}
+
+header > * {
+    margin: 1.5rem 0;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 3em;
+}
+
+h2 {
+    font-weight: 100;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+article p {
+    font-size: 110%;
+    color: #333;
+}
+
+#sidebar {
+    overflow-x: hidden;
+}
+
+#figure-modal iframe {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#figure-modal .table {
+    margin-bottom: 0;
+}
+
+[data-section=abstract] p {
+    font-size: 120%;
+}
+
+[data-section=abstract] p:last-of-type {
+    margin-bottom: 0;
+}
+
+#authors-list {
+    font-size: 120%;
+}
+
+.author {
+    margin: 2rem 0;
+}
+
+ul.contributions > li > ul {
+    margin-left: 1rem;
+}
+
+#figures > figure:not(:last-of-type) {
+    margin-bottom: 4rem;
+}

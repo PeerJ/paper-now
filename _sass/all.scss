@@ -1,0 +1,24 @@
+header {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+iframe {
+    border: 0;
+}
+
+[data-section=abstract] h2 {
+    display: none;
+}
+
+.inline-list span:not(:last-child):after {
+    content: ", ";
+}
+
+figure img {
+    max-width: 100%;
+}
+
+.author {
+    margin: 1rem 0;
+}

@@ -13,8 +13,10 @@
     <!-- styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic">
-    <link rel="stylesheet" href="{{ site.baseurl }}/article.css">
-    <link rel="stylesheet" media="print" href="{{ site.baseurl }}/print.css">
+
+    <link rel="stylesheet" media="screen" href="{{ site.baseurl }}/styles/screen.css">
+    <link rel="stylesheet" media="screen and (min-width: 768px)" href="{{ site.baseurl }}/styles/wide.css">
+    <link rel="stylesheet" media="print" href="{{ site.baseurl }}/styles/print.css">
 
     <!-- MathJax config -->
     <script type="text/x-mathjax-config">
@@ -166,6 +168,6 @@
                 {{ references | markdownify }}
             </section>
         </div>
-    </article>    
+    </article>
 </body>
 </html>

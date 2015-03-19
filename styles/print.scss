@@ -1,3 +1,8 @@
+---
+---
+
+@import "all.scss";
+
 html {
     font-size: 10pt;
 }
@@ -222,7 +227,7 @@ tfoot { display:table-footer-group }
 
 [data-section=abstract] {
     background: #eef;
-    padding: 11pt 10pt;
+    padding: 12pt 0;
     border-bottom: 2px solid #07f;
 }
 
