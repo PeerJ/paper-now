@@ -1,0 +1,54 @@
+title: "My First Article"
+doi: # e.g. 10.1234/example.1
+date: # e.g. 2015-03-02
+authors:
+  - id: "https://orcid.org/00000000-0000-0000-000001"
+    name: "First Author"
+    email: "first.author@example.com"
+    url: http://example.com/authors/1
+    affiliations:
+      - address: "Department, Institution, City, State, Country"
+    funders:
+        - name: "Medical Research Council"
+          doi: "10.13039/501100000265"
+          awards: [ "MRC123", "MRC456" ]
+  - id: "https://orcid.org/00000000-0000-0000-000002"
+    name: "Second Author"
+    email: "second.author@example.com"
+    affiliations:
+      - address: "Department, Institution, City, State, Country"
+        url: http://mathematics.stanford.edu/
+      - address: "Department, Institution, City, State, Country"
+    funders:
+      - name: "National Institutes of Health"
+        url: http://www.nih.gov/
+        doi: "10.13039/100000002"
+        awards: [ "NIH123" ]
+contributions: # http://dictionary.casrai.org/Contributor_Roles
+  - name: "Methodology"
+    url: http://dictionary.casrai.org/Contributor_Roles/Methodology
+    contributors:
+      - id: https://orcid.org/00000000-0000-0000-000001
+        name: "First Author"
+      - id: https://orcid.org/00000000-0000-0000-000002
+        name: "Second Author"
+  - name: "Investigation"
+    url: http://dictionary.casrai.org/Contributor_Roles/Investigation
+    contributors:
+      - id: https://orcid.org/00000000-0000-0000-000002
+        name: "Second Author"
+  - name: "Software"
+    url: http://dictionary.casrai.org/Contributor_Roles/Software
+    contributors:
+      - id: https://orcid.org/00000000-0000-0000-000002
+        name: "Second Author"
+  - name: "Writing - original draft"
+    url: http://dictionary.casrai.org/Contributor_Roles/Writing_%E2%80%93_original_draft
+    contributors:
+      - id: https://orcid.org/00000000-0000-0000-000001
+        name: "First Author"
+  - name: "Writing - review & editing"
+    url: http://dictionary.casrai.org/Contributor_Roles/Writing_%E2%80%93_review_%26_editing
+    contributors:
+      - id: https://orcid.org/00000000-0000-0000-000001
+        name: "Second Author"

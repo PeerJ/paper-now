@@ -1,0 +1,22 @@
+<ul class="contributions list-unstyled">
+    {% for contribution in include.contributions %}
+        {% if contribution.contributors %}
+            <li itemprop="contributor" itemscope itemtype="http://schema.org/Role">
+                {% if contribution.url %}
+                    <h3><a href="{{ contribution.url }}" target="_blank" itemprop="roleName">{{ contribution.name }}</a></h3>
+                {% else %}
+                    <h3 itemprop="roleName">{{ contribution.name }}</h3>
+                {% endif %}
+
+                <ul class="list-unstyled">
+                    {% for contributor in contribution.contributors %}
+                        <li itemprop="contributor" itemscope itemtype="http://schema.org/Person"
+                            itemid="{{ contributor.id }}">
+                            <a href="{{ contributor.id }}">{{ contributor.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

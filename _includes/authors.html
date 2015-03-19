@@ -1,6 +1,7 @@
 <ul class="list-unstyled">
-    {% for author in page.authors %}
-    <li class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    {% for author in include.authors %}
+    <li class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"
+        itemid="{{ author.id }}">
         <div itemprop="name">
             <span class="glyphicon glyphicon-user"></span>
             {% if author.url %}
@@ -22,12 +23,12 @@
         {% if author.affiliations %}
             <ul class="affiliations list-unstyled">
                 {% for affiliation in author.affiliations %}
-                <li itemprop="address">
+                <li itemprop="affiliation" itemscope itemtype="http://schema.org/Organization">
                     <span class="glyphicon glyphicon-globe"></span>
                     {% if affiliation.url %}
-                        <a href="{{ affiliation.url }}">{{ affiliation.address }}</a>
+                        <a href="{{ affiliation.url }}" itemprop="url"><span itemprop="address">{{ affiliation.address }}</span></a>
                     {% else %}
-                        <span>{{ affiliation.address }}</span>
+                        <span itemprop="address">{{ affiliation.address }}</span>
                     {% endif %}
                 </li>
                 {% endfor %}

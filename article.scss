@@ -114,16 +114,21 @@ h2 {
     margin-bottom: 2rem;
 }
 
+h3 {
+    font-size: 120%;
+    font-weight: bold;
+}
+
 article p {
     font-size: 110%;
     color: #333;
 }
 
-#abstract p {
+[data-section=abstract] p {
     font-size: 120%;
 }
 
-#abstract p:last-of-type {
+[data-section=abstract] p:last-of-type {
     margin-bottom: 0;
 }
 
@@ -139,7 +144,11 @@ article p {
     margin: 2rem 0;
 }
 
-#figures > div:not(:last-of-type) {
+ul.contributions > li > ul {
+    margin-left: 1rem;
+}
+
+#figures > figure:not(:last-of-type) {
     margin-bottom: 4rem;
 }
 
