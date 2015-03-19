@@ -1,6 +1,6 @@
 title: "My First Article"
 doi: # e.g. 10.1234/example.1
-date: # e.g. 2015-03-02
+date: "2015-03-15T12:00:00" # e.g. 2015-03-02
 authors:
   - id: "https://orcid.org/00000000-0000-0000-000001"
     name: "First Author"
