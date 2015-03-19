@@ -1,0 +1,30 @@
+// from https://www.polymer-project.org/0.5/docs/polymer/layout-attrs.html
+
+@media (min-width: 600px) {
+    .has-background [horizontal],
+    .has-background [vertical] {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+    }
+
+    .has-background [horizontal] {
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+    }
+
+    .has-background [vertical] {
+      -ms-flex-direction: column;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+
+    .has-background [flex] {
+      -ms-flex: 1 1 0.000000001px;
+      -webkit-flex: 1;
+      flex: 1;
+      -webkit-flex-basis: 0.000000001px;
+      flex-basis: 0.000000001px;
+    }
+}

@@ -47,16 +47,25 @@
         <!-- main column -->
         <div class="column" id="main">
             <!-- header -->
-            <header>
-                <!-- title -->
-                {% capture title %}# {{ article.title }}{% endcapture %}
-                {{ title | markdownify }}
+            <header {% if page.header %}class="has-background"{% endif %}>
+                {% if page.header %}
+                    <div style="background-image:url({{ page.header }})" class="header-background"></div>
+                {% endif %}
 
-                <!-- author names -->
-                <div id="authors-list" class="inline-list">
-                    {% for author in article.authors %}
-                        <span>{{ author.name }}</span>
-                    {% endfor %}
+                <div horizontal>
+                    <div flex>
+                        <!-- title -->
+                        {% capture title %}# {{ article.title }}{% endcapture %}
+                        {{ title | markdownify }}
+                    </div>
+
+                    {% if article.date %}
+                    <div vertical class="article-date">
+                        <div flex></div>
+                        <time itemprop="datePublished"
+                            datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
+                    </div>
+                    {% endif %}
                 </div>
             </header>
 
@@ -88,16 +97,6 @@
 
                     <script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js" async></script>
                 </aside>
-            {% endif %}
-
-            {% if article.date %}
-                <!-- publication date -->
-                <div id="published">
-                    <h2>Published</h2>
-                    <div>
-                        <time itemprop="datePublished" datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
-                    </div>
-                </div>
             {% endif %}
 
             {% if article.doi %}
