@@ -111,7 +111,6 @@
                 {% include authors.html authors=article.authors %}
             </div>
 
-
             <!-- figures -->
             {% if site.figures %}
                 <div id="figures">
@@ -120,6 +119,14 @@
                     {% for item in figures %}
                         {{ item.output }}
                     {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- contributions -->
+            {% if article.contributions %}
+                <div id="contributions">
+                    <h2>Contributions</h2>
+                    {% include contributions.html contributions=article.contributions %}
                 </div>
             {% endif %}
 
