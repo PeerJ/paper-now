@@ -246,7 +246,7 @@ section[data-section="abstract"] {
 .popover,
 .nav,
 .hide,
-.annotator-toolbar {
+div[class^=annotator-] {
     display: none !important;
 }
 
