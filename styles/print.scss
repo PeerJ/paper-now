@@ -17,12 +17,16 @@ body {
     /*prince-image-magic: jpeq-quality(90);*/
 }
 
+header {
+    margin: 2rem 0;
+}
+
 article {
     display: block !important;
 }
 
-[column] {
-    margin: 0 !important;
+.modal {
+    display: none;
 }
 
 dl {
@@ -209,6 +213,10 @@ tfoot { display:table-footer-group }
 .references li {
     padding-left: 0;
     margin-bottom: 5pt;
+}
+
+section[data-section="abstract"] {
+    padding: 1rem;
 }
 
 #authors-list {
