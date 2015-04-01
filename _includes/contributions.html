@@ -11,9 +11,7 @@
                 <ul class="list-unstyled">
                     {% for contributor in contribution.contributors %}
                         <li itemprop="contributor" itemscope itemtype="http://schema.org/Person"
-                            itemid="{{ contributor.id }}">
-                            <a href="{{ contributor.id }}">{{ contributor.name }}</a>
-                        </li>
+                          itemid="{{ contributor.sameAs }}">{{ contributor.name }}</li>
                     {% endfor %}
                 </ul>
             </li>

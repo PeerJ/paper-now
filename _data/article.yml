@@ -1,54 +1,89 @@
+# Note: to avoid writing the same data out multiple times,
+# identifiers (starting with "&") are referenced later (starting with "*")
+
 title: "My First Article"
+date: 2015-03-15T12:00:00Z
 doi: # e.g. 10.1234/example.1
-date: "2015-03-15T12:00:00" # e.g. 2015-03-02
+
+organizations: # defined here, used in "affiliations" and "grants", below
+  - &stanford
+      address: "Department, Institution, City, State, Country"
+      url: http://mathematics.stanford.edu/
+
+  - &harvard
+      address: "Department, Institution, City, State, Country"
+
+  - &mrc
+      name: "Medical Research Council"
+      sameAs: "http://dx.doi.org/10.13039/501100000265"
+
+  - &nih
+      name: "National Institutes of Health"
+      url: http://www.nih.gov/
+      sameAs: "http://dx.doi.org/10.13039/100000002"
+
 authors:
-  - id: "https://orcid.org/00000000-0000-0000-000001"
-    name: "First Author"
-    email: "first.author@example.com"
-    url: http://example.com/authors/1
-    affiliations:
-      - address: "Department, Institution, City, State, Country"
-    funders:
-        - name: "Medical Research Council"
-          doi: "10.13039/501100000265"
-          awards: [ "MRC123", "MRC456" ]
-  - id: "https://orcid.org/00000000-0000-0000-000002"
-    name: "Second Author"
-    email: "second.author@example.com"
-    affiliations:
-      - address: "Department, Institution, City, State, Country"
-        url: http://mathematics.stanford.edu/
-      - address: "Department, Institution, City, State, Country"
-    funders:
-      - name: "National Institutes of Health"
-        url: http://www.nih.gov/
-        doi: "10.13039/100000002"
-        awards: [ "NIH123" ]
-contributions: # http://dictionary.casrai.org/Contributor_Roles
+  - &alice-jones
+      name: "Alice Jones"
+      email: "alice.jones@example.com"
+      url: http://example.com/authors/1
+      sameAs: "https://orcid.org/00000000-0000-0000-000001"
+      affiliations:
+        - *stanford
+        - *harvard
+
+  - &bob-smith
+      name: "Bob Smith"
+      email: "bob.smith@example.com"
+      sameAs: "https://orcid.org/00000000-0000-0000-000002"
+      affiliations:
+        - *stanford
+
+grants:
+  - &mrc123
+    name: MRC123
+    agent: *mrc
+    recipients:
+      - *alice-jones
+      - *bob-smith
+
+  - &mrc456
+    name: MRC456
+    agent: *mrc
+    recipients:
+      - *alice-jones
+      - *bob-smith
+
+  - &nih123
+    name: NIH123
+    agent: *nih
+    recipients:
+      - *alice-jones
+
+contributions:
   - name: "Methodology"
     url: http://dictionary.casrai.org/Contributor_Roles/Methodology
     contributors:
-      - id: https://orcid.org/00000000-0000-0000-000001
-        name: "First Author"
-      - id: https://orcid.org/00000000-0000-0000-000002
-        name: "Second Author"
+      - *alice-jones
+      - *bob-smith
+
   - name: "Investigation"
     url: http://dictionary.casrai.org/Contributor_Roles/Investigation
     contributors:
-      - id: https://orcid.org/00000000-0000-0000-000002
-        name: "Second Author"
+      - *alice-jones
+      - *bob-smith
+
   - name: "Software"
     url: http://dictionary.casrai.org/Contributor_Roles/Software
     contributors:
-      - id: https://orcid.org/00000000-0000-0000-000002
-        name: "Second Author"
+      - *bob-smith
+
   - name: "Writing - original draft"
     url: http://dictionary.casrai.org/Contributor_Roles/Writing_%E2%80%93_original_draft
     contributors:
-      - id: https://orcid.org/00000000-0000-0000-000001
-        name: "First Author"
+      - *alice-jones
+
   - name: "Writing - review & editing"
     url: http://dictionary.casrai.org/Contributor_Roles/Writing_%E2%80%93_review_%26_editing
     contributors:
-      - id: https://orcid.org/00000000-0000-0000-000001
-        name: "Second Author"
+      - *bob-smith
