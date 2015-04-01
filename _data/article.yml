@@ -1,11 +1,11 @@
-# Note: to avoid writing the same data out multiple times,
+# Note: to avoid repeating the same data multiple times,
 # identifiers (starting with "&") are referenced later (starting with "*")
 
 title: "My First Article"
 date: 2015-03-15T12:00:00Z
 doi: # e.g. 10.1234/example.1
 
-organizations: # defined here, used in "affiliations" and "grants", below
+organizations: # defined here, used in "affiliations" and "grants" below
   - &stanford
       address: "Department, Institution, City, State, Country"
       url: http://mathematics.stanford.edu/
