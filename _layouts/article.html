@@ -146,6 +146,14 @@
                 </div>
             {% endif %}
 
+            <!-- grants -->
+            {% if article.grants %}
+                <div id="funding">
+                    <h2>Funding</h2>
+                    {% include grants.html grants=article.grants %}
+                </div>
+            {% endif %}
+
             <!-- contributions -->
             {% if article.contributions %}
                 <div id="contributions">
