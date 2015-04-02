@@ -1,8 +1,6 @@
 ---
 ---
 
-@import "all.scss";
-
 html {
     font-size: 10pt;
 }
@@ -215,22 +213,14 @@ tfoot { display:table-footer-group }
     margin-bottom: 5pt;
 }
 
-section[data-section="abstract"] {
-    padding: 1rem;
-}
-
-#authors-list {
-    margin: 20px 0;
-}
-
-#authors-list > span {
-    color: #333;
-}
-
 .label {
     vertical-align: super;
     font-size: smaller;
     color: #00a6fc;
+}
+
+iframe {
+    border: 0;
 }
 
 [data-section=abstract] {
@@ -241,6 +231,18 @@ section[data-section="abstract"] {
 
 [data-section=abstract] h2 {
     display: none;
+}
+
+.inline-list span:not(:last-child):after {
+    content: ", ";
+}
+
+figure img {
+    max-width: 100%;
+}
+
+.author {
+    margin: 2rem 0;
 }
 
 .popover,

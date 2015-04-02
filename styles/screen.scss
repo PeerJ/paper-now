@@ -1,9 +1,6 @@
 ---
 ---
 
-@import "all.scss";
-@import "layout.scss";
-
 body {
     font-size: 15px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -14,7 +11,6 @@ body {
 }
 
 header {
-    min-height: 6rem;
     margin: 4rem 0;
 }
 
@@ -62,9 +58,20 @@ article p {
     margin-bottom: 0;
 }
 
-#authors-list {
-    font-size: 120%;
-    margin-bottom: 2rem;
+iframe {
+    border: 0;
+}
+
+[data-section=abstract] h2 {
+    display: none;
+}
+
+.inline-list span:not(:last-child):after {
+    content: ", ";
+}
+
+figure img {
+    max-width: 100%;
 }
 
 .author {
@@ -84,38 +91,4 @@ article p {
     margin-top: 1.5rem;
     font-size: 120%;
     font-weight: 100;
-}
-
-.has-background {
-    margin: 0 -2rem 4rem;
-    padding: 4rem 2rem 3rem;
-    position: relative;
-    color: white;
-    overflow: hidden;
-    text-align: left;
-    text-shadow: 0 1px 1px black;
-    box-shadow: 0 1px 1px black;
-}
-
-.has-background h1 {
-    font-weight: 200;
-    text-align: left;
-}
-
-.has-background .article-date {
-    text-align: right;
-    margin-top: 0;
-}
-
-.header-background {
-    position: absolute;
-    top: -1rem;
-    left: -1rem;
-    bottom: -1rem;
-    right: -1rem;
-    background-size: cover;
-    background-position: top left;
-    background-repeat: no-repeat;
-    -webkit-filter: blur(1px);
-    z-index: -1;
 }

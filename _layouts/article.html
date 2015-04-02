@@ -49,31 +49,23 @@
 <body>
     <!-- article -->
     <article itemscope itemtype="http://schema.org/ScholarlyArticle">
+        <!-- title -->
         <meta itemprop="name" content="{{ article.title }}">
 
         <!-- main column -->
         <div class="column" id="main">
             <!-- header -->
-            <header {% if page.header %}class="has-background"{% endif %}>
-                {% if page.header %}
-                    <div style="background-image:url({{ page.header }})" class="header-background"></div>
+            <header>
+                <!-- title -->
+                {% capture title %}# {{ article.title }}{% endcapture %}
+                {{ title | markdownify }}
+
+                {% if article.date %}
+                  <div class="article-date">
+                      <time itemprop="datePublished"
+                          datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
+                  </div>
                 {% endif %}
-
-                <div horizontal>
-                    <div flex>
-                        <!-- title -->
-                        {% capture title %}# {{ article.title }}{% endcapture %}
-                        {{ title | markdownify }}
-                    </div>
-
-                    {% if article.date %}
-                    <div vertical class="article-date">
-                        <div flex></div>
-                        <time itemprop="datePublished"
-                            datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
-                    </div>
-                    {% endif %}
-                </div>
             </header>
 
             <!-- sections -->
