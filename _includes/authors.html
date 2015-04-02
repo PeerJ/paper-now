@@ -1,60 +1,47 @@
 <ul class="list-unstyled">
     {% for author in include.authors %}
-    <li class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"
-        itemid="{{ author.sameAs }}">
-        <div itemprop="name">
-            <span class="glyphicon glyphicon-user"></span>
-            {% if author.url %}
-                <a href="{{ author.url }}">{{ author.name }}</a>
-            {% else %}
-                <span>{{ author.name }}</span>
-            {% endif %}
-        </div>
+        <li class="author" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="{{ author.sameAs }}">
+            <ul class="list-group">
+                <li itemprop="name" class="list-group-item">
+                      {% if author.url %}
+                          <a href="{{ author.url }}">{{ author.name }}</a>
+                      {% else %}
+                          <span>{{ author.name }}</span>
+                      {% endif %}
 
-        {% if author.email %}
-        <div>
-            <a itemprop="email" href="mailto:{{ author.email }}">
-                <span class="glyphicon glyphicon-envelope"></span>
-                <span>{{ author.email }}</span>
-            </a>
-        </div>
-        {% endif %}
-
-        {% if author.affiliations %}
-            <ul class="affiliations list-unstyled">
-                {% for affiliation in author.affiliations %}
-                <li itemprop="affiliation" itemscope itemtype="http://schema.org/Organization">
-                    <span class="glyphicon glyphicon-globe"></span>
-                    {% if affiliation.url %}
-                        <a href="{{ affiliation.url }}" itemprop="url"><span itemprop="address">{{ affiliation.address }}</span></a>
-                    {% else %}
-                        <span itemprop="address">{{ affiliation.address }}</span>
-                    {% endif %}
+                      {% if author.email %}
+                        <span class="badge">
+                            <a itemprop="email" href="mailto:{{ author.email }}" target="_blank">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </a>
+                        </span>
+                      {% endif %}
                 </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
 
-        {% if author.funders %}
-            <ul class="funders list-unstyled">
-                {% for funder in author.funders %}
-                    <li>
-                        <span class="glyphicon glyphicon-piggy-bank"></span>
-                        {% if funder.url %}
-                            <a href="{{ funder.url }}">{{ funder.name }}</a>
-                        {% else %}
-                            <span>{{ funder.name }}</span>
-                        {% endif %}
+                {% if author.affiliations %}
+                    {% for affiliation in author.affiliations %}
+                        <li itemprop="affiliation" itemscope itemtype="http://schema.org/Organization" class="list-group-item">
+                            {% if affiliation.url %}
+                                <a href="{{ affiliation.url }}" itemprop="url">
+                                  <span itemprop="name">{{ affiliation.name }}</span>
+                                </a>
+                            {% else %}
+                                <span itemprop="name">{{ affiliation.name }}</span>
+                            {% endif %}
 
-                        {% if funder.awards %}
-                            <span class="awards inline-list">
-                                ({% for award in funder.awards %}<span>{{ award }}</span>{% endfor %})
-                            </span>
-                        {% endif %}
-                    </li>
-                {% endfor %}
+                            {% if affiliation.address %}
+                              <meta itemprop="address" content="{{ affiliation.address }}">
+
+                              <span class="badge">
+                                <a href="https://www.google.com/maps?q={{ affiliation.address }}" target="_blank">
+                                    <span class="glyphicon glyphicon-globe"></span>
+                                </a>
+                              </span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                {% endif %}
             </ul>
-        {% endif %}
-    </li>
+        </li>
     {% endfor %}
 </ul>

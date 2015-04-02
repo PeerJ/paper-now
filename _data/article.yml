@@ -7,10 +7,12 @@ doi: # e.g. 10.1234/example.1
 
 organizations: # defined here, used in "affiliations" and "grants" below
   - &stanford
+      name: "Stanford University"
       address: "Department, Institution, City, State, Country"
       url: http://mathematics.stanford.edu/
 
   - &harvard
+      name: "Harvard University"
       address: "Department, Institution, City, State, Country"
 
   - &mrc

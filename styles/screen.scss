@@ -78,8 +78,21 @@ figure img {
     margin: 2rem 0;
 }
 
-.author .glyphicon {
-  margin-right: 0.5rem;
+.author .list-group-item {
+    border: none;
+    padding: 0;
+}
+
+.author .badge {
+  background-color: transparent;
+}
+
+.author .badge a {
+    color: #448;
+}
+
+.author .badge a:hover {
+    color: #44d;
 }
 
 #figures > figure:not(:last-of-type) {
