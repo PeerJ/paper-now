@@ -28,8 +28,7 @@ h2 {
 }
 
 h3 {
-    font-size: 120%;
-    font-weight: bold;
+    font-size: 140%;
 }
 
 article p {
@@ -76,23 +75,11 @@ figure img {
 
 .author {
     margin: 2rem 0;
+    font-size: 110%;
 }
 
-.author .list-group-item {
-    border: none;
-    padding: 0;
-}
-
-.author .badge {
-  background-color: transparent;
-}
-
-.author .badge a {
-    color: #448;
-}
-
-.author .badge a:hover {
-    color: #44d;
+.affiliation-address {
+    margin-bottom: 0.5rem;
 }
 
 #figures > figure:not(:last-of-type) {

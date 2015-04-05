@@ -39,7 +39,7 @@ article {
 
 #sidebar > div > *,
 #sidebar > aside > * {
-    margin: 0 2rem;
+    margin: 0 1.5rem;
 }
 
 #sidebar h2 {
@@ -48,6 +48,12 @@ article {
     margin: 2rem 0;
     padding: 1rem 1rem;
     background: #eee;
+}
+
+#sidebar h3 {
+    font-size: 120%;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
 }
 
 #sidebar div:first-of-type h2 {

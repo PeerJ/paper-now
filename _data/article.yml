@@ -5,62 +5,53 @@ title: "My First Article"
 date: 2015-03-15T12:00:00Z
 doi: # e.g. 10.1234/example.1
 
-organizations: # defined here, used in "affiliations" and "grants" below
-  - &stanford
-      name: "Stanford University"
-      address: "Department, Institution, City, State, Country"
-      url: http://mathematics.stanford.edu/
-
-  - &harvard
-      name: "Harvard University"
-      address: "Department, Institution, City, State, Country"
-
-  - &mrc
-      name: "Medical Research Council"
-      sameAs: "http://dx.doi.org/10.13039/501100000265"
-
-  - &nih
-      name: "National Institutes of Health"
-      url: http://www.nih.gov/
-      sameAs: "http://dx.doi.org/10.13039/100000002"
-
 authors:
   - &alice-jones
-      name: "Alice Jones"
-      email: "alice.jones@example.com"
-      url: http://example.com/authors/1
-      sameAs: "https://orcid.org/00000000-0000-0000-000001"
-      affiliations:
-        - *stanford
-        - *harvard
+    id: "alice-jones"
+    name: "Alice Jones"
+    email: "alice.jones@example.com"
+    url: http://example.com/authors/1
+    sameAs: "https://orcid.org/00000000-0000-0000-000001"
 
   - &bob-smith
-      name: "Bob Smith"
-      email: "bob.smith@example.com"
-      sameAs: "https://orcid.org/00000000-0000-0000-000002"
-      affiliations:
-        - *stanford
+    id: "bob-smith"
+    name: "Bob Smith"
+    email: "bob.smith@example.com"
+    sameAs: "https://orcid.org/00000000-0000-0000-000002"
 
-grants:
-  - &mrc123
-    name: MRC123
-    agent: *mrc
-    recipients:
+affiliations:
+  - name: "Stanford University"
+    address: "Department, Institution, City, State, Country"
+    url: http://mathematics.stanford.edu/
+    members:
       - *alice-jones
       - *bob-smith
 
-  - &mrc456
-    name: MRC456
-    agent: *mrc
-    recipients:
+  - name: "Harvard University"
+    address: "Department, Institution, City, State, Country"
+    members:
       - *alice-jones
-      - *bob-smith
 
-  - &nih123
-    name: NIH123
-    agent: *nih
-    recipients:
-      - *alice-jones
+funders:
+  - name: "Medical Research Council"
+    sameAs: "http://dx.doi.org/10.13039/501100000265"
+    awards:
+      - name: MRC123
+        recipients:
+          - *alice-jones
+          - *bob-smith
+      - name: MRC456
+        recipients:
+          - *alice-jones
+          - *bob-smith
+
+  - name: "National Institutes of Health"
+    url: http://www.nih.gov/
+    sameAs: "http://dx.doi.org/10.13039/100000002"
+    awards:
+      - name: NIH123
+        recipients:
+          - *alice-jones
 
 contributions:
   - name: "Methodology"

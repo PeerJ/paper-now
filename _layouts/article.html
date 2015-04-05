@@ -109,8 +109,44 @@
             <!-- authors -->
             <div id="authors">
                 <h2>Authors</h2>
-                {% include authors.html authors=article.authors %}
+                {% for author in article.authors %}
+                  {% include author.html author=author %}
+                {% endfor %}
             </div>
+
+            <!-- affiliations -->
+            {% if article.affiliations %}
+                <div id="affiliations">
+                    <h2>Affiliations</h2>
+                    {% for affiliation in article.affiliations %}
+                      {% include affiliation.html affiliation=affiliation %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- contributions -->
+            {% if article.contributions %}
+                <div id="contributions">
+                    <h2>Contributions</h2>
+                    {% for contribution in article.contributions %}
+                      {% if contribution.contributors %}
+                        {% include contribution.html contribution=contribution %}
+                      {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- funders -->
+            {% if article.funders %}
+                <div id="funding">
+                    <h2>Funding</h2>
+                    {% for funder in article.funders %}
+                        {% for award in funder.awards %}
+                          {% include award.html funder=funder award=award %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
 
             <!-- figures -->
             {% if site.figures %}
@@ -135,22 +171,6 @@
                             </div>
                         </figure>
                     {% endfor %}
-                </div>
-            {% endif %}
-
-            <!-- grants -->
-            {% if article.grants %}
-                <div id="funding">
-                    <h2>Funding</h2>
-                    {% include grants.html grants=article.grants %}
-                </div>
-            {% endif %}
-
-            <!-- contributions -->
-            {% if article.contributions %}
-                <div id="contributions">
-                    <h2>Contributions</h2>
-                    {% include contributions.html contributions=article.contributions %}
                 </div>
             {% endif %}
 

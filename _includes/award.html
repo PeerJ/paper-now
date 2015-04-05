@@ -1,0 +1,23 @@
+{% assign funder = include.funder %}
+{% assign award = include.award %}
+
+<div itemprop="funding" itemscope itemtype="http://schema.org/PayAction">
+  <div itemprop="agent">
+    <h3 itemprop="name">
+      {% if funder.url %}
+        <a href="{{ funder.url }}" target="_blank" itemprop="url">{{ funder.name }}</a>
+      {% else %}
+        {{ funder.name }}
+      {% endif %}
+      ({{ award.name }})
+    </h3>
+  </div>
+
+  {% if award.recipients %}
+    <div class="inline-list">
+      {% for recipient in award.recipients %}
+        <span itemprop="recipient" itemscope itemtype="http://schema.org/Person" itemid="{{ recipient.sameAs }}">{{ recipient.name }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

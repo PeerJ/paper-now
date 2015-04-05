@@ -1,0 +1,28 @@
+<div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="{{ author.sameAs }}">
+    <span itemprop="name">
+      {% if author.url %}
+        <a href="{{ author.url }}" itemprop="url">{{ author.name }}</a>
+      {% else %}
+        {{ author.name }}
+      {% endif %}
+    </span>
+
+    {% if author.email %}
+      &lt;<a itemprop="email" href="mailto:{{ author.email }}" target="_blank">{{ author.email }}</a>&gt;
+    {% endif %}
+
+    {% capture affiliations %}
+      {% for affiliation in article.affiliations %}
+        {% assign ref = forloop.index %}
+        {% for member in affiliation.members %}
+          {% if member.id == author.id %}
+            <meta itemprop="affiliation" itemscope itemtype="http://schema.org/Organization" itemid="affiliation-{{ affiliation.name | slugify }}">
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endcapture %}
+
+    {% if affiliations %}
+      <sup class="inline-list">{{ affiliations }}</sup>
+    {% endif %}
+</div>
