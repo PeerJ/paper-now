@@ -84,8 +84,8 @@
         <!-- navbar -->
         <div class="navbar navbar-default">
           <ul class="nav">
-              <li><a href="#authors">Authors</a></li>
               <li><a href="#figures">Figures</a></li>
+              <li><a href="#authors">Authors</a></li>
               <li><a href="#references">References</a></li>
           </ul>
         </div>
@@ -110,6 +110,32 @@
                 <div id="doi">
                     <h2>DOI</h2>
                     <div><a href="https://dx.doi.org/{{ article.doi }}" itemprop="sameAs">{{ article.doi }}</a></div>
+                </div>
+            {% endif %}
+
+            <!-- figures -->
+            {% if site.figures %}
+                <div id="figures">
+                    <h2>Figures</h2>
+                    {% assign figures = site.figures | sort:"order" %}
+                    {% for figure in figures %}
+                        <figure id="{{ figure.label | slugify }}">
+                            <figcaption>
+                                {% capture heading %}<a href="{{ site.baseurl }}{{ figure.url }}" class="figure-link">**{{ figure.label }}**</a>: {{ figure.title }}{% endcapture %}
+                                {{ heading | markdownify }}
+
+                                {{ figure.description | markdownify }}
+                            </figcaption>
+
+                            <div class="figure-wrap">
+                                {% if figure.image %}
+                                    <a href="{{ site.baseurl }}{{ figure.url }}" class="figure-link"><img src="{{ figure.image }}"></a>
+                                {% else %}
+                                    {{ figure.content | markdownify }}
+                                {% endif %}
+                            </div>
+                        </figure>
+                    {% endfor %}
                 </div>
             {% endif %}
 
@@ -151,32 +177,6 @@
                         {% for award in funder.awards %}
                           {% include award.html funder=funder award=award %}
                         {% endfor %}
-                    {% endfor %}
-                </div>
-            {% endif %}
-
-            <!-- figures -->
-            {% if site.figures %}
-                <div id="figures">
-                    <h2>Figures</h2>
-                    {% assign figures = site.figures | sort:"order" %}
-                    {% for figure in figures %}
-                        <figure id="{{ figure.label | slugify }}">
-                            <figcaption>
-                                {% capture heading %}<a href="{{ site.baseurl }}{{ figure.url }}" class="figure-link">**{{ figure.label }}**</a>: {{ figure.title }}{% endcapture %}
-                                {{ heading | markdownify }}
-
-                                {{ figure.description | markdownify }}
-                            </figcaption>
-
-                            <div class="figure-wrap">
-                                {% if figure.image %}
-                                    <a href="{{ site.baseurl }}{{ figure.url }}" class="figure-link"><img src="{{ figure.image }}"></a>
-                                {% else %}
-                                    {{ figure.content | markdownify }}
-                                {% endif %}
-                            </div>
-                        </figure>
                     {% endfor %}
                 </div>
             {% endif %}
