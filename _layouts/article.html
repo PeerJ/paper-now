@@ -81,6 +81,15 @@
             {% endfor %}
         </div>
 
+        <!-- navbar -->
+        <div class="navbar navbar-default">
+          <ul class="nav">
+              <li><a href="#authors">Authors</a></li>
+              <li><a href="#figures">Figures</a></li>
+              <li><a href="#references">References</a></li>
+          </ul>
+        </div>
+
         <!-- side column -->
         <div class="column" id="sidebar">
             {% if article.doi %}
@@ -96,9 +105,7 @@
 
                     <script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js" async></script>
                 </aside>
-            {% endif %}
 
-            {% if article.doi %}
                 <!-- doi -->
                 <div id="doi">
                     <h2>DOI</h2>

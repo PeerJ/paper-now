@@ -37,6 +37,13 @@ article {
     padding: 0;
 }
 
+.navbar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0;
+}
+
 #sidebar > div > *,
 #sidebar > aside > * {
     margin: 0 1.5rem;
