@@ -11,18 +11,16 @@
       &lt;<a itemprop="email" href="mailto:{{ author.email }}" target="_blank">{{ author.email }}</a>&gt;
     {% endif %}
 
-    {% capture affiliations %}
-      {% for affiliation in article.affiliations %}
-        {% assign ref = forloop.index %}
-        {% for member in affiliation.members %}
-          {% if member.id == author.id %}
-            <meta itemprop="affiliation" itemscope itemtype="http://schema.org/Organization" itemid="affiliation-{{ affiliation.name | slugify }}">
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-    {% endcapture %}
-
-    {% if affiliations %}
-      <sup class="inline-list">{{ affiliations }}</sup>
+    {% if author.sameAs %}
+      <a href="{{ author.sameAs }}" itemprop="sameAs" target="_blank">&nbsp;</a>
     {% endif %}
+
+    {% for affiliation in article.affiliations %}
+      {% assign ref = forloop.index %}
+      {% for member in affiliation.members %}
+        {% if member.id == author.id %}
+          <meta itemprop="affiliation" itemscope itemtype="http://schema.org/Organization" itemid="affiliation-{{ affiliation.name | slugify }}">
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
 </div>

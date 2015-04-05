@@ -80,6 +80,14 @@ figure img {
     font-size: 110%;
 }
 
+.author [itemprop=sameAs][href^="https://orcid.org"] {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  color: transparent;
+  background: url("https://orcid.org/sites/default/files/images/orcid_16x16.png") no-repeat;
+}
+
 #figures > figure:not(:last-of-type) {
     margin-bottom: 4rem;
 }
