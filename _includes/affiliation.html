@@ -1,14 +1,23 @@
 <div itemscope itemtype="http://schema.org/Organization" itemid="affiliation-{{ affiliation.name | slugify }}">
-  <h3 itemprop="name">
+  {% capture affiliationName %}
+    <span class="inline-list">
+      {% if affiliation.department %}
+        <span itemprop="department">{{ affiliation.department }}</span>
+      {% endif %}
+      <span itemprop="name">{{ affiliation.name }}</span>
+    </span>
+  {% endcapture %}
+
+  <h3>
     {% if affiliation.url %}
-      <a href="{{ affiliation.url }}" itemprop="url">{{ affiliation.name }}</a>
+      <a href="{{ affiliation.url }}" itemprop="url">{{ affiliationName }}</a>
     {% else %}
-      {{ affiliation.name }}
+      {{ affiliationName }}
     {% endif %}
   </h3>
 
-  {% if affiliation.address %}
-    <div itemprop="address" class="affiliation-address">{{ affiliation.address }}</div>
+  {% if affiliation.location %}
+    <div itemprop="location" class="affiliation-location">{{ affiliation.location }}</div>
   {% endif %}
 
   <div class="inline-list">
