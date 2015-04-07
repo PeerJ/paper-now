@@ -82,6 +82,13 @@
                     {% endif %}
                 {% endfor %}
 
+                <div id="figure-thumbnails">
+                    {% for figure in figures %}
+                        {% if figure.image %}
+                        <a href="#figure-{{ figure.order }}" class="figure-thumbnail"><img src="{{ figure.image }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </header>
 
             <!-- sections -->
