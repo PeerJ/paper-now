@@ -11,13 +11,13 @@ authors:
     name: "Alice Jones"
     email: "alice.jones@example.com"
     url: http://example.com/authors/1
-    sameAs: "https://orcid.org/00000000-0000-0000-000001"
+    orcid: "00000000-0000-0000-000001"
 
   - &bob-smith
     id: "bob-smith"
     name: "Bob Smith"
     email: "bob.smith@example.com"
-    sameAs: "https://orcid.org/00000000-0000-0000-000002"
+    orcid: "00000000-0000-0000-000002"
 
 affiliations:
   - name: "Stanford University"

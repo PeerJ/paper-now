@@ -1,4 +1,8 @@
-<div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="{{ author.sameAs }}">
+<span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="{{ author.sameAs }}">
+    {% if author.orcid %}
+      <a href="https://orcid.org/{{ author.orcid }}" itemprop="sameAs" target="_blank"><img src="https://orcid.org/sites/default/files/images/orcid_24x24.png" alt="ORCID logo"></a>
+    {% endif %}
+
     <span itemprop="name">
       {% if author.url %}
         <a href="{{ author.url }}" itemprop="url">{{ author.name }}</a>
@@ -8,11 +12,7 @@
     </span>
 
     {% if author.email %}
-      &lt;<a itemprop="email" href="mailto:{{ author.email }}" target="_blank">{{ author.email }}</a>&gt;
-    {% endif %}
-
-    {% if author.sameAs %}
-      <a href="{{ author.sameAs }}" itemprop="sameAs" target="_blank">&nbsp;</a>
+      <a itemprop="email" href="mailto:{{ author.email }}" target="_blank">✉</a>
     {% endif %}
 
     {% for affiliation in article.affiliations %}
@@ -23,4 +23,4 @@
         {% endif %}
       {% endfor %}
     {% endfor %}
-</div>
+</span>

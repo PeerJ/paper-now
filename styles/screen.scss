@@ -65,7 +65,7 @@ iframe {
     display: none;
 }
 
-.inline-list span:not(:last-child):after {
+.inline-list > span:not(:last-child):after {
     content: ", ";
 }
 
@@ -75,17 +75,52 @@ figure img {
     display: block;
 }
 
-.author {
-    margin: 2rem 0;
-    font-size: 110%;
+#authors {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
-.author [itemprop=sameAs][href^="https://orcid.org"] {
+.author {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.25em 0.5em;
+    font-size: 110%;
+    font-weight: 100;
+}
+
+.author a {
+    color: inherit;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.author a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.author [itemprop=email] {
+    color: #aaa;
+    position: relative;
+    line-height: 0;
+    top: -4px;
+}
+
+.author [itemprop=sameAs] {
   display: inline-block;
-  width: 16px;
-  height: 16px;
   color: transparent;
   background: url("https://orcid.org/sites/default/files/images/orcid_16x16.png") no-repeat;
+  width: 1em;
+  position: relative;
+  top: -2px;
+  margin-right: 2px;
+}
+
+.author [itemprop=sameAs] img {
+    width: 100%;
+    height: 100%;
+}
 }
 
 #figures > figure:not(:last-of-type) {

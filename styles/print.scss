@@ -23,10 +23,6 @@ article {
     display: block !important;
 }
 
-.modal {
-    display: none;
-}
-
 dl {
     margin: 0.5rem 0;
 }
@@ -225,12 +221,21 @@ iframe {
 
 [data-section=abstract] {
     background: #eef;
-    padding: 12pt 0;
+    padding: 12pt;
     border-bottom: 2px solid #07f;
 }
 
 [data-section=abstract] h2 {
     display: none;
+}
+
+#authors {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#authors > span:not(:last-of-type):after {
+  content: ", ";
 }
 
 .inline-list span:not(:last-child):after {
@@ -244,6 +249,9 @@ figure img {
 .popover,
 .nav,
 .hide,
+.modal,
+.author [itemprop=sameAs],
+#figure-thumbnails,
 div[class^=annotator-] {
     display: none !important;
 }

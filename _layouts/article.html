@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     {% assign article = site.data.article %}
+    {% assign sections = site.sections | sort:"order" %}
+    {% assign figures = site.figures | sort:"order" %}
 
     <!-- metadata -->
     <title>{{ article.title }}</title>
@@ -66,28 +68,28 @@
                           datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
                   </div>
                 {% endif %}
+
+                <div id="authors">
+                  {% for author in article.authors %}
+                    {% include author.html %}
+                  {% endfor %}
+                </div>
+
+                <!-- header sections -->
+                {% for section in sections %}
+                    {% if section.container == 'header' %}
+                        {% include section.html %}
+                    {% endif %}
+                {% endfor %}
+
             </header>
 
             <!-- sections -->
-            {% assign sections = site.sections | sort:"order" %}
             {% for section in sections %}
-                <section data-section="{{ section.title | slugify }}"
-                    {% if section.property %}itemprop="{{ section.property}}"{% endif %}>
-                    {% capture title %}## {{ section.title }}{% endcapture %}
-                    {{ title | markdownify }}
-
-                    {{ section.content }}
-                </section>
+                {% unless section.container %}
+                    {% include section.html %}
+                {% endunless %}
             {% endfor %}
-        </div>
-
-        <!-- navbar -->
-        <div class="navbar navbar-default">
-          <ul class="nav">
-              <li><a href="#figures">Figures</a></li>
-              <li><a href="#authors">Authors</a></li>
-              <li><a href="#references">References</a></li>
-          </ul>
         </div>
 
         <!-- side column -->
@@ -113,11 +115,64 @@
                 </div>
             {% endif %}
 
+            <!-- affiliations -->
+            {% if article.affiliations %}
+                <div id="affiliations">
+                    <h2>Affiliations</h2>
+                    {% for affiliation in article.affiliations %}
+                      {% include affiliation.html %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- contributions -->
+            {% if article.contributions %}
+                <div id="contributions">
+                    <h2>Contributions</h2>
+                    {% for contribution in article.contributions %}
+                      {% if contribution.contributors %}
+                        {% include contribution.html %}
+                      {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- funders -->
+            {% if article.funders %}
+                <div id="funding">
+                    <h2>Funding</h2>
+                    {% for funder in article.funders %}
+                        {% for award in funder.awards %}
+                          {% include award.html %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- keywords -->
+            {% if article.keywords %}
+                <div id="keywords" itemprop="keywords">
+                    <h2>Keywords</h2>
+
+                    <div class="inline-list">
+                        {% for keyword in article.keywords %}
+                            <span>{{ keyword }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- sidebar sections -->
+            {% for section in sections %}
+                {% if section.container == 'sidebar' %}
+                    {% include section.html %}
+                {% endif %}
+            {% endfor %}
+
             <!-- figures -->
             {% if site.figures %}
                 <div id="figures">
                     <h2>Figures</h2>
-                    {% assign figures = site.figures | sort:"order" %}
                     {% for figure in figures %}
                         <figure id="{{ figure.label | slugify }}">
                             <figcaption>
@@ -136,61 +191,6 @@
                             </div>
                         </figure>
                     {% endfor %}
-                </div>
-            {% endif %}
-
-            <!-- authors -->
-            <div id="authors">
-                <h2>Authors</h2>
-                {% for author in article.authors %}
-                  {% include author.html author=author %}
-                {% endfor %}
-            </div>
-
-            <!-- affiliations -->
-            {% if article.affiliations %}
-                <div id="affiliations">
-                    <h2>Affiliations</h2>
-                    {% for affiliation in article.affiliations %}
-                      {% include affiliation.html affiliation=affiliation %}
-                    {% endfor %}
-                </div>
-            {% endif %}
-
-            <!-- contributions -->
-            {% if article.contributions %}
-                <div id="contributions">
-                    <h2>Contributions</h2>
-                    {% for contribution in article.contributions %}
-                      {% if contribution.contributors %}
-                        {% include contribution.html contribution=contribution %}
-                      {% endif %}
-                    {% endfor %}
-                </div>
-            {% endif %}
-
-            <!-- funders -->
-            {% if article.funders %}
-                <div id="funding">
-                    <h2>Funding</h2>
-                    {% for funder in article.funders %}
-                        {% for award in funder.awards %}
-                          {% include award.html funder=funder award=award %}
-                        {% endfor %}
-                    {% endfor %}
-                </div>
-            {% endif %}
-
-            <!-- keywords -->
-            {% if article.keywords %}
-                <div id="keywords" itemprop="keywords">
-                    <h2>Keywords</h2>
-
-                    <div class="inline-list">
-                        {% for keyword in article.keywords %}
-                            <span>{{ keyword }}</span>
-                        {% endfor %}
-                    </div>
                 </div>
             {% endif %}
 
