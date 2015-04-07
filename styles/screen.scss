@@ -126,31 +126,34 @@ figure img {
 }
 
 #figure-thumbnails {
-  text-align: left;
-  overflow-x: auto;
-  vertical-align: middle;
-  white-space: nowrap;
-  padding: 0.25rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+    background: #EEE;
+    overflow-x: auto;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: -2rem;
+    height: 20rem;
+    margin-right: -2rem;
 }
 
 .figure-thumbnail {
   display: inline-block;
-  margin-right: 0.5rem;
-  max-height: 15rem;
-  max-width: 15rem;
-  padding: 0.5rem;
-  background-color: #eee;
-}
-
-.figure-thumbnail:hover {
-  box-shadow: 0 1px 2px #aaa;
+  margin-right: 1rem;
+  vertical-align: middle;
+  border: 5px solid white;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #FFF;
+  box-shadow: 0 1px 1px #ccc;
+  border-radius: 2px;
 }
 
 .figure-thumbnail img {
   max-height: 100%;
   max-width: 100%;
+  vertical-align: middle;
 }
 
 #figures > figure:not(:last-of-type) {
