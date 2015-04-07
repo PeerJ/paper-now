@@ -20,15 +20,15 @@ authors:
     orcid: "00000000-0000-0000-000002"
 
 affiliations:
-  - name: "Stanford University"
-    address: "Department, Institution, City, State, Country"
+  - name: "Department of Mathematics, Stanford University"
+    address: "Stanford, California, USA"
     url: http://mathematics.stanford.edu/
     members:
       - *alice-jones
       - *bob-smith
 
-  - name: "Harvard University"
-    address: "Department, Institution, City, State, Country"
+  - name: "Department of Molecular and Cellular Biology, Harvard University"
+    address: "Cambridge, MA, USA"
     members:
       - *alice-jones
 
