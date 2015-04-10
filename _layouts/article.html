@@ -35,56 +35,53 @@
 <body>
     <!-- article -->
     <article is="research-article" itemscope itemtype="http://schema.org/ScholarlyArticle">
-        <!-- title -->
-        <meta itemprop="name" content="{{ article.title }}">
+        <!-- header -->
+        <header>
+            <!-- title -->
+            <meta itemprop="name" content="{{ article.title }}">
 
-        <!-- main column -->
-        <div class="column" id="main">
-            <!-- header -->
-            <header>
-                <!-- title -->
-                {% capture title %}# {{ article.title }}{% endcapture %}
-                {{ title | markdownify }}
+            {% capture title %}# {{ article.title }}{% endcapture %}
+            {{ title | markdownify }}
 
-                {% if article.date %}
-                  <div class="article-date">
-                      <time itemprop="datePublished"
-                          datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
-                  </div>
+            <!-- data -->
+            {% if article.date %}
+              <div class="article-date">
+                  <time itemprop="datePublished"
+                      datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
+              </div>
+            {% endif %}
+
+            <div id="authors">
+              {% for author in article.authors %}
+                {% include author.html %}
+              {% endfor %}
+            </div>
+
+            <!-- header sections -->
+            {% for section in sections %}
+                {% if section.container == 'header' %}
+                    {% include section.html %}
                 {% endif %}
+            {% endfor %}
 
-                <div id="authors">
-                  {% for author in article.authors %}
-                    {% include author.html %}
-                  {% endfor %}
-                </div>
-
-                <!-- header sections -->
-                {% for section in sections %}
-                    {% if section.container == 'header' %}
-                        {% include section.html %}
+            <div id="figure-thumbnails">
+                {% for figure in figures %}
+                    {% if figure.image %}
+                    <a href="#figure-{{ figure.order }}" class="figure-thumbnail"><img src="{{ figure.image }}"></a>
                     {% endif %}
                 {% endfor %}
+            </div>
+        </header>
 
-                <div id="figure-thumbnails">
-                    {% for figure in figures %}
-                        {% if figure.image %}
-                        <a href="#figure-{{ figure.order }}" class="figure-thumbnail"><img src="{{ figure.image }}"></a>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </header>
+        <!-- sections -->
+        {% for section in sections %}
+            {% unless section.container %}
+                {% include section.html %}
+            {% endunless %}
+        {% endfor %}
 
-            <!-- sections -->
-            {% for section in sections %}
-                {% unless section.container %}
-                    {% include section.html %}
-                {% endunless %}
-            {% endfor %}
-        </div>
-
-        <!-- side column -->
-        <div class="column" id="sidebar">
+        <!-- metadata -->
+        <footer>
             {% if article.doi %}
                 <!-- metrics -->
                 <aside id="metrics" class="hidden-print">
@@ -186,12 +183,12 @@
             {% endif %}
 
             <!-- references -->
-            <section id="references">
+            <div id="references">
                 <h2>References</h2>
                 {% capture references %}{% include_relative references.md %}{% endcapture %}
                 {{ references | markdownify }}
-            </section>
-        </div>
+            </div>
+        </footer>
     </article>
 </body>
 </html>
