@@ -6,18 +6,18 @@ date: 2015-03-15T12:00:00Z
 doi: # e.g. 10.1234/example.1
 
 authors:
-  - &alice-jones
-    id: "alice-jones"
-    name: "Alice Jones"
-    email: "alice.jones@example.com"
+  - &alice-exemplar
+    id: "alice-exemplar"
+    name: "Alice Exemplar"
+    email: "alice.exemplar@example.com"
     url: http://example.com/authors/1
-    orcid: "00000000-0000-0000-000001"
+    orcid: "0000-0002-9298-3168"
 
-  - &bob-smith
-    id: "bob-smith"
-    name: "Bob Smith"
-    email: "bob.smith@example.com"
-    orcid: "00000000-0000-0000-000002"
+  - &bob-exemplar
+    id: "bob-exemplar"
+    name: "Bob Exemplar"
+    email: "bob.exemplar@example.com"
+    orcid: "0000-0002-9341-7985"
 
 affiliations:
   - name: "Stanford University"
@@ -25,14 +25,14 @@ affiliations:
     location: "Stanford, California, USA"
     url: http://mathematics.stanford.edu/
     members:
-      - *alice-jones
-      - *bob-smith
+      - *alice-exemplar
+      - *bob-exemplar
 
   - name: "Harvard University"
     department: "Department of Molecular and Cellular Biology"
     location: "Cambridge, MA, USA"
     members:
-      - *alice-jones
+      - *alice-exemplar
 
 funders:
   - name: "Medical Research Council"
@@ -40,12 +40,12 @@ funders:
     awards:
       - name: MRC123
         recipients:
-          - *alice-jones
-          - *bob-smith
+          - *alice-exemplar
+          - *bob-exemplar
       - name: MRC456
         recipients:
-          - *alice-jones
-          - *bob-smith
+          - *alice-exemplar
+          - *bob-exemplar
 
   - name: "National Institutes of Health"
     url: http://www.nih.gov/
@@ -53,32 +53,32 @@ funders:
     awards:
       - name: NIH123
         recipients:
-          - *alice-jones
+          - *alice-exemplar
 
 contributions:
   - name: "Methodology"
     url: http://dictionary.casrai.org/Contributor_Roles/Methodology
     contributors:
-      - *alice-jones
-      - *bob-smith
+      - *alice-exemplar
+      - *bob-exemplar
 
   - name: "Investigation"
     url: http://dictionary.casrai.org/Contributor_Roles/Investigation
     contributors:
-      - *alice-jones
-      - *bob-smith
+      - *alice-exemplar
+      - *bob-exemplar
 
   - name: "Software"
     url: http://dictionary.casrai.org/Contributor_Roles/Software
     contributors:
-      - *bob-smith
+      - *bob-exemplar
 
   - name: "Writing - original draft"
     url: http://dictionary.casrai.org/Contributor_Roles/Writing_%E2%80%93_original_draft
     contributors:
-      - *alice-jones
+      - *alice-exemplar
 
   - name: "Writing - review & editing"
     url: http://dictionary.casrai.org/Contributor_Roles/Writing_%E2%80%93_review_%26_editing
     contributors:
-      - *bob-smith
+      - *bob-exemplar
