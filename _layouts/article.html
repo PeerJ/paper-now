@@ -3,19 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-    {% assign article = site.data.article %}
-    {% assign sections = site.sections | sort:"order" %}
-    {% assign figures = site.figures | sort:"order" %}
-
-    <!-- metadata -->
-    <title>{{ article.title }}</title>
-    <meta name="description" content="{{ article.description }}">
+    <title>{{ site.data.article.title }}</title>
 
     <!-- web components -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.6.0/webcomponents.min.js"></script>
     <link rel="import" href="{{ site.import }}research-article/research-article.html">
 </head>
+
+{% assign article = site.data.article %}
+{% assign sections = site.sections | sort:"order" %}
+{% assign figures = site.figures | sort:"order" %}
+
 <body unresolved>
     <!-- article -->
     <article is="research-article" itemscope itemtype="http://schema.org/ScholarlyArticle">
