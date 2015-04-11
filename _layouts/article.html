@@ -10,6 +10,13 @@
     <link rel="import" href="{{ site.import }}import.html">
     <link rel="stylesheet" media="print" href="{{ site.import }}research-article-print.css">
     <noscript><link rel="stylesheet" media="screen" href="{{ site.import }}research-article-screen.css"></noscript>
+
+    <!-- offline caching -->
+    <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('serviceworker.js', { scope: '.' });
+    }
+    </script>
 </head>
 
 {% assign article = site.data.article %}
