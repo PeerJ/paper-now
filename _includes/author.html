@@ -1,7 +1,7 @@
 <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="{{ author.sameAs }}">
     {% if author.orcid %}
       <a href="https://orcid.org/{{ author.orcid }}" itemprop="sameAs" target="_blank"
-        title="View this author's ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_24x24.png" alt="ORCID logo"></a>
+        data-orcid="{{ author.orcid }}" title="View this author's ORCID profile"></a>
     {% endif %}
 
     <span itemprop="name">
