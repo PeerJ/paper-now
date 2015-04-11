@@ -16,7 +16,6 @@ authors:
   - &bob-exemplar
     id: "bob-exemplar"
     name: "Bob Exemplar"
-    email: "bob.exemplar@example.com"
     orcid: "0000-0002-9341-7985"
 
 affiliations:

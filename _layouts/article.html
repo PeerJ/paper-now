@@ -107,6 +107,19 @@
                 </div>
             {% endif %}
 
+            <!-- corresponding author(s) -->
+            <div id="corresponding-author">
+                <h2>Corresponding Author</h2>
+
+                <div class="inline-list">
+                    {% for author in article.authors %}
+                        {% if author.email %}
+                            <span><a href="mailto:{{ author.email }}">{{ author.name }}</a></span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
             <!-- funders -->
             {% if article.funders %}
                 <div id="funding">
@@ -116,19 +129,6 @@
                           {% include award.html %}
                         {% endfor %}
                     {% endfor %}
-                </div>
-            {% endif %}
-
-            <!-- keywords -->
-            {% if article.keywords %}
-                <div id="keywords" itemprop="keywords">
-                    <h2>Keywords</h2>
-
-                    <div class="inline-list">
-                        {% for keyword in article.keywords %}
-                            <span>{{ keyword }}</span>
-                        {% endfor %}
-                    </div>
                 </div>
             {% endif %}
 

@@ -13,7 +13,7 @@
     </span>
 
     {% if author.email %}
-      <a itemprop="email" href="mailto:{{ author.email }}" target="_blank">✉</a>
+      <meta itemprop="email" content="{{ author.email }}">
     {% endif %}
 
     {% for affiliation in article.affiliations %}
