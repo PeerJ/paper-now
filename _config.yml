@@ -1,6 +1,7 @@
 safe: true
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'serve.sh', 'article.png', 'LICENSE']
 baseurl: /paper-now
+import: https://peerj.github.io/research-article/components/
 collections:
     figures:
         output: true
