@@ -7,7 +7,7 @@
 
     <!-- web components -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.6.0/webcomponents.min.js"></script>
-    <link rel="import" href="{{ site.import }}import.html">
+    <link rel="import" href="{{ site.import }}research-article.html">
     <link rel="stylesheet" media="print" href="{{ site.import }}research-article-print.css">
     <noscript><link rel="stylesheet" media="screen" href="{{ site.import }}research-article-screen.css"></noscript>
 
@@ -64,7 +64,7 @@
         {% endfor %}
 
         <!-- metadata -->
-        <footer>            
+        <footer>
             {% if article.doi %}
                 <!-- doi -->
                 <div id="doi" data-doi="{{ article.doi }}">
