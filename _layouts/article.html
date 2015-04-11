@@ -64,23 +64,10 @@
         {% endfor %}
 
         <!-- metadata -->
-        <footer>
+        <footer>            
             {% if article.doi %}
-                <!-- metrics -->
-                <aside id="metrics" class="hidden-print">
-                    <!--<h2>Metrics</h2>-->
-
-                    <div class="altmetric-embed"
-                        data-badge-type="medium-donut"
-                        data-badge-details="below"
-                        data-hide-no-mentions="true"
-                        data-doi="{{ article.doi}}"></div>
-
-                    <script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js" async></script>
-                </aside>
-
                 <!-- doi -->
-                <div id="doi">
+                <div id="doi" data-doi="{{ article.doi }}">
                     <h2>DOI</h2>
                     <div><a href="https://dx.doi.org/{{ article.doi }}" itemprop="sameAs">{{ article.doi }}</a></div>
                 </div>
