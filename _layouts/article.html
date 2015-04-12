@@ -6,8 +6,10 @@
     <title>{{ site.data.article.title }}</title>
 
     <!-- web components -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.6.0/webcomponents.min.js"></script>
+    <script src="{{ site.import }}components/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="{{ site.import }}research-article.html">
+
+    <!-- stylesheets for clients with no JS -->
     <link rel="stylesheet" media="print" href="{{ site.import }}components/research-article/research-article-print.css">
     <noscript>
         <link rel="stylesheet" media="screen" href="{{ site.import }}components/research-article/research-article-screen.css">
