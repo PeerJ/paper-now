@@ -6,23 +6,25 @@
     <title>{{ site.data.article.title }}</title>
 
     <!-- web components -->
-    <script src="{{ site.import }}components/webcomponentsjs/webcomponents.min.js"></script>
-    <link rel="import" href="{{ site.import }}research-article.html">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.6.0/webcomponents.min.js"></script>
+    {% for import in site.imports %}<link rel="import" href="{{ import }}">{% endfor %}
 
-    <!-- stylesheets for clients with no JS -->
-    <link rel="stylesheet" media="print" href="{{ site.import }}components/research-article/research-article-print.css">
-    <noscript>
-        <link rel="stylesheet" media="screen" href="{{ site.import }}components/research-article/research-article-screen.css">
-    </noscript>
+    <!-- stylesheets -->
+    <link rel="stylesheet" media="screen"
+        href="{{ site.theme }}research-article/research-article-screen.css">
+    <link rel="stylesheet" media="screen and (min-width:768px)"
+        href="{{ site.theme }}research-article/research-article-wide.css">
+    <link rel="stylesheet" media="print"
+        href="{{ site.theme }}research-article/research-article-print.css">
 
     <!-- offline caching -->
+    <!--
     <script>
-    /*
     if (navigator.serviceWorker) {
       navigator.serviceWorker.register('serviceworker.js', { scope: '.' });
     }
-    */
     </script>
+    -->
 </head>
 
 {% assign article = site.data.article %}

@@ -1,2 +1,3 @@
 baseurl:
-import: http://localhost:3000/research-article/
+imports:
+    - http://localhost:3000/research-article/research-article.html
