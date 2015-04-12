@@ -1,0 +1,20 @@
+---
+layout: null
+---
+
+{% assign article = site.data.article %}
+{% assign sections = site.sections | sort:"order" %}
+{% assign figures = site.figures | sort:"order" %}
+{% capture import_component %}{{ site.import }}research-article.html{% endcapture %}
+{
+    "require": [
+        "https://orcid.org/sites/default/files/images/orcid_16x16.png",
+        {{ import_component | jsonify }}
+    ],
+    "article": {{ article | jsonify }},
+    "figures": [
+        {% for figure in figures %}
+        {{ figure | jsonify }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ]
+}
