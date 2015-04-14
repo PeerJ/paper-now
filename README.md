@@ -17,7 +17,7 @@ In contrast to the more traditional process of `submit > peer review > publish` 
 ## Notes
 
 * Paper Now is at a very experimental stage; it may progress further if people find it useful.
-* Paper Now is inspired by [Jekyll Now](https://github.com/barryclark/jekyll-now).
+* Paper Now is inspired by [Jekyll Now](https://github.com/barryclark/jekyll-now); the sidebar layout is inspired by [Lens](https://github.com/elifesciences/lens).
 * If you rename your repository, you also need to change the `baseurl` setting in [_config.yml](_config.yml) to match.
 * *There isn't currently a way to upload binary files using GitHub's web interface, so you'll need to do this locally. [GitHub's desktop client](https://guides.github.com/introduction/getting-your-project-on-github/#desktop) is probably the easiest way to clone a repository, add files and push the changes back to GitHub.
 * The article styles and scripts are in [a separate web component](https://github.com/PeerJ/research-article), so can be updated independently of the article content.
