@@ -1,7 +1,7 @@
 <div itemprop="contributor" itemscope itemtype="http://schema.org/Role">
   <h3 itemprop="name">
     {% if contribution.url %}
-      <a href="{{ contribution.url }}" target="_blank" itemprop="url roleName">{{ contribution.name }}</a></h3>
+      <a href="{{ contribution.url }}" target="_blank" itemprop="url roleName">{{ contribution.name }}</a>
     {% else %}
       {{ contribution.name }}
     {% endif %}
