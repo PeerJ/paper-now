@@ -4,6 +4,7 @@
 title: "My First Article"
 date: 2015-03-15T12:00:00Z
 doi: # e.g. 10.1234/example.1
+github: # e.g. user-name/paper-now
 
 authors:
   - &alice-exemplar

@@ -25,11 +25,13 @@
     }
     </script>
     -->
-</head>
 
-{% assign article = site.data.article %}
-{% assign sections = site.sections | sort:"order" %}
-{% assign figures = site.figures | sort:"order" %}
+    {% assign article = site.data.article %}
+    {% assign sections = site.sections | sort:"order" %}
+    {% assign figures = site.figures | sort:"order" %}
+
+    {% if article.doi %}<meta name="citation_doi" content="{{ article.doi }}">{% endif %}
+</head>
 
 <body unresolved>
     <!-- article -->
@@ -73,12 +75,24 @@
 
         <!-- metadata -->
         <footer>
-            {% if article.doi %}
-                <!-- doi -->
-                <div id="doi" data-doi="{{ article.doi }}">
-                    <h2>DOI</h2>
-                    <div><a href="https://dx.doi.org/{{ article.doi }}" itemprop="sameAs">{{ article.doi }}</a></div>
-                </div>
+            {% if article.doi or article.github %}
+            <div id="links">
+                <h2>Links</h2>
+
+                <dl>
+                    {% if article.doi %}
+                        <dt>DOI</dt>
+                        <dd><a href="https://dx.doi.org/{{ article.doi }}" itemprop="sameAs"
+                            data-doi="{{ article.doi }}">{{ article.doi }}</a></dd>
+                    {% endif %}
+
+                    {% if article.github %}
+                        <dt>Source</dt>
+                        <dd><a href="https://github.com/{{ article.github }}" rel="source"
+                            data-github="{{ article.github }}">{{ article.github }}</a></dd>
+                    {% endif %}
+                </dl>
+            </div>
             {% endif %}
 
             <!-- affiliations -->
