@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>{{ site.data.article.title }}</title>
 
+    <!-- web components -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.6.0/webcomponents.min.js"></script>
+    {% for import in site.imports %}<link rel="import" href="{{ import }}">{% endfor %}
+
     <!-- stylesheets -->
     <link rel="stylesheet" media="screen"
         href="{{ site.theme }}research-article/research-article-screen.css">
     <link rel="stylesheet" media="print"
         href="{{ site.theme }}research-article/research-article-print.css">
-
-    <!-- web components -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.6.0/webcomponents.min.js"></script>
-    {% for import in site.imports %}<link rel="import" href="{{ import }}">{% endfor %}
 
     <!-- offline caching -->
     <!--
