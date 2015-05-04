@@ -6,10 +6,10 @@
       {{ contribution.name }}
     {% endif %}
   </h3>
-  
+
   <div class="inline-list">
     {% for contributor in contribution.contributors %}
-      <span itemprop="contributor" itemscope itemtype="http://schema.org/Person" itemid="{{ contributor.sameAs }}">{{ contributor.name }}</span>
+      <span itemprop="contributor" itemscope itemtype="http://schema.org/Person" {% if contributor.orcid %}itemid="{{ contributor.orcid }}"{% endif %}>{{ contributor.name }}</span>
     {% endfor %}
   </div>
 </div>

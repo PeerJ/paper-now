@@ -13,7 +13,7 @@
   {% if award.recipients %}
     <div class="inline-list">
       {% for recipient in award.recipients %}
-        <span itemprop="recipient" itemscope itemtype="http://schema.org/Person" itemid="{{ recipient.sameAs }}">{{ recipient.name }}</span>
+        <span itemprop="recipient" itemscope itemtype="http://schema.org/Person" {% if recipient.orcid %}itemid="{{ recipient.orcid }}"{% endif %}>{{ recipient.name }}</span>
       {% endfor %}
     </div>
   {% endif %}

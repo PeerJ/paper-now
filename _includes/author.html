@@ -1,4 +1,4 @@
-<span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="{{ author.sameAs }}">
+<span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person" {% if author.orcid %}itemid="{{ author.orcid }}"{% endif %}>
     {% if author.orcid %}
       <a href="https://orcid.org/{{ author.orcid }}" itemprop="sameAs" target="_blank"
         data-orcid="{{ author.orcid }}" title="View this author's ORCID profile"></a>
