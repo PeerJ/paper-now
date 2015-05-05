@@ -15,15 +15,6 @@
     <link rel="stylesheet" media="print" no-shim
         href="{{ site.theme }}research-article/research-article-print.css">
 
-    <!-- offline caching -->
-    <!--
-    <script>
-    if (navigator.serviceWorker) {
-      navigator.serviceWorker.register('serviceworker.js', { scope: '.' });
-    }
-    </script>
-    -->
-
     {% assign article = site.data.article %}
     {% assign sections = site.sections | sort:"order" %}
     {% assign figures = site.figures | sort:"order" %}
