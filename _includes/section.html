@@ -1,4 +1,4 @@
-<section data-section="{{ section.title | slugify }}"
+<section id="section-{{ section.title | slugify }}"
     {% if section.property %}itemprop="{{ section.property}}"{% endif %}>
     {% capture title %}## {{ section.title }}{% endcapture %}
     {{ title | markdownify }}
