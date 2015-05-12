@@ -1,4 +1,4 @@
 baseurl:
 imports:
     - http://localhost:3000/research-article/research-article.html
-theme: http://localhost:3000/
+theme: http://localhost:3001/paper-now/

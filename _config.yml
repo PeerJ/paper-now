@@ -3,7 +3,7 @@ exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'serve.sh', 'article.png', 'LI
 baseurl: /paper-now
 imports:
     - https://peerj.github.io/research-article/research-article.html
-theme: https://peerj.github.io/research-article/components/
+theme: https://peerj.github.io/paper-themes/paper-now/
 collections:
     figures:
         output: true

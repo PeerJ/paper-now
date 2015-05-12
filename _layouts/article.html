@@ -10,10 +10,8 @@
     {% for import in site.imports %}<link rel="import" href="{{ import }}">{% endfor %}
 
     <!-- stylesheets -->
-    <link rel="stylesheet" media="screen" no-shim
-        href="{{ site.theme }}research-article/research-article-screen.css">
-    <link rel="stylesheet" media="print" no-shim
-        href="{{ site.theme }}research-article/research-article-print.css">
+    <link rel="stylesheet" media="screen" href="{{ site.theme }}screen.css" no-shim>
+    <link rel="stylesheet" media="print" href="{{ site.theme }}print.css" no-shim>
 
     {% assign article = site.data.article %}
     {% assign sections = site.sections | sort:"order" %}
