@@ -129,9 +129,9 @@
                 </div>
             {% endif %}
 
-            <!-- sidebar sections -->
+            <!-- footer sections -->
             {% for section in sections %}
-                {% if section.container == 'sidebar' %}
+                {% if section.container == 'footer' %}
                     {% include section.html %}
                 {% endif %}
             {% endfor %}
