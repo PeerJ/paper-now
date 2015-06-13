@@ -162,11 +162,14 @@
             {% endif %}
 
             <!-- references -->
-            <div id="references">
-                <h2>References</h2>
-                {% capture references %}{% include_relative references.md %}{% endcapture %}
-                {{ references | markdownify }}
-            </div>
+            {% capture references %}{% include_relative references.md %}{% endcapture %}
+
+            {% if references %}
+                <div id="references">
+                    <h2>References</h2>
+                    {{ references | markdownify }}
+                </div>
+            {% endif %}
         </footer>
     </article>
 </body>
