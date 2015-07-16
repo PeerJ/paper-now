@@ -8,6 +8,7 @@ In contrast to the more traditional process of `submit > peer review > publish` 
 
 * [Searching for anthrax in the New York City subway metagenome](https://read-lab-confederation.github.io/nyc-subway-anthrax-study/)
 * [Collapse of the world's largest herbivores](http://git.macropus.org/collapse-largest-herbivores/)
+* [Evidence for embodied predictive coding: the anterior insula coordinates cortical processing of tactile deviancy](http://git.macropus.org/allen-insula/)
 * [Paper Now example article](https://peerj.github.io/paper-now/)
 
 ## Instructions
