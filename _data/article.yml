@@ -36,7 +36,7 @@ affiliations:
 
 funders:
   - name: "Medical Research Council"
-    sameAs: "http://dx.doi.org/10.13039/501100000265"
+    sameAs: "http://doi.org/10.13039/501100000265"
     awards:
       - name: MRC123
         recipients:
@@ -49,7 +49,7 @@ funders:
 
   - name: "National Institutes of Health"
     url: http://www.nih.gov/
-    sameAs: "http://dx.doi.org/10.13039/100000002"
+    sameAs: "http://doi.org/10.13039/100000002"
     awards:
       - name: NIH123
         recipients:
