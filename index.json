@@ -8,7 +8,7 @@ layout: null
 {% capture import_component %}{{ site.import }}research-article.html{% endcapture %}
 {
     "require": [
-        "https://orcid.org/sites/default/files/images/orcid_16x16.png",
+        "https://orcid.org/sites/default/files/images/orcid_32x32.png",
         {{ import_component | jsonify }}
     ],
     "article": {{ article | jsonify }},
