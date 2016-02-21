@@ -16,7 +16,7 @@ In contrast to the more traditional process of `submit > peer review > publish` 
 
 1. Clone this repository to your own account, by visiting [GitHub's importer](https://import.github.com/new/?import_url=https://github.com/peerj/paper-now/).
 1. [Edit the article metadata](_data/article.yml)
-1. Add [data](data)* and [figures](_figures)
+1. Add [data](data) and [figures](_figures) by [uploading files to GitHub](https://help.github.com/articles/adding-a-file-to-a-repository/).
 1. [Edit each section](_sections)
 1. [View your article](https://peerj.github.io/paper-now/) in GitHub Pages at https://{username}.github.io/paper-now
 
@@ -25,7 +25,7 @@ In contrast to the more traditional process of `submit > peer review > publish` 
 * Paper Now is at a very experimental stage; it may progress further if people find it useful.
 * Paper Now is inspired by [Jekyll Now](https://github.com/barryclark/jekyll-now); the sidebar layout is inspired by [Lens](https://github.com/elifesciences/lens).
 * If you rename your repository, you also need to change the `baseurl` setting in [_config.yml](_config.yml) to match.
-* *There isn't currently a way to upload binary files using GitHub's web interface, so you'll need to do this locally. [GitHub's desktop client](https://guides.github.com/introduction/getting-your-project-on-github/#desktop) is probably the easiest way to clone a repository, add files and push the changes back to GitHub.
+* [GitHub's desktop client](https://guides.github.com/introduction/getting-your-project-on-github/#desktop) is probably the easiest way to clone a repository, add/edit files and push the changes back to GitHub.
 * The article styles and scripts are in [a separate web component](https://github.com/PeerJ/research-article), so can be updated independently of the article content.
 
 ## Feedback
