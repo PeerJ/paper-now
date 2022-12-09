@@ -14,9 +14,9 @@ In contrast to the more traditional process of `submit > peer review > publish` 
 
 ## Instructions
 
-1. Clone this repository to your own account, by visiting [GitHub's importer](https://import.github.com/new/?import_url=https://github.com/peerj/paper-now/).
+1. Clone this repository to your own account, by visiting [GitHub's importer](https://github.com/new/import?import_url=https://github.com/peerj/paper-now/).
 1. [Edit the article metadata](_data/article.yml)
-1. Add [data](data) and [figures](_figures) by [uploading files to GitHub](https://help.github.com/articles/adding-a-file-to-a-repository/).
+1. Add [data](data) and [figures](_figures) by [uploading files to GitHub](https://docs.github.com/de/repositories/working-with-files/managing-files/adding-a-file-to-a-repository).
 1. [Edit each section](_sections)
 1. [View your article](https://peerj.github.io/paper-now/) in GitHub Pages at https://{username}.github.io/paper-now
 
